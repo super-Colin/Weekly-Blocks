@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Slider</title>
+
+    <link rel="stylesheet" href="./basicSlider.css">
+</head>
+<body>
+
+
+    <!-- <div class="basicSlider-container">
+
+        <div class="basicSlider-slide basicSlider-slide-fade">
+            <div class="basicSlider-numberText">1 / 3</div>
+            <img src="../images/cyberpunk-city.png">
+            <div class="basicSlider-slideText"><span>Some Text</span></div>
+        </div>
+
+        <div class="basicSlider-slide basicSlider-slide-fade">
+            <div class="basicSlider-numberText">2 / 3</div>
+            <img src="../images/low_poly.jpg">
+            <div class="basicSlider-slideText"><span>More Text</span></div>
+        </div>
+        <a class="prev" href="#" onclick="nextSlide(-1)"></a>
+        <a class="next" href="#" onclick="nextSlide(1)"></a>
+
+        
+    </div>
+
+    </div>
+        <div class="basicSlider-dot" onclick="changeCurrentSlide(1)"></div>
+        <div class="basicSlider-dot" onclick="changeCurrentSlide(2)"></div>
+        <div class="basicSlider-dot" onclick="changeCurrentSlide(3)"></div>
+    </div> -->
+
+<!-- Slideshow container -->
+<div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="../images/low_poly.jpg" style="width:100%">
+        <div class="text">Caption Text</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="../images/supercolin-logo.png" style="width:100%">
+        <div class="text">Caption Two</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="../images/cyberpunk-city.png" style="width:100%">
+        <div class="text">Caption Three</div>
+    </div>
+
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+
+    
+
+    <script src="./basicSlider.js"></script>
+</body>
+</html>
