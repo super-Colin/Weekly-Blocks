@@ -1,32 +1,52 @@
-var slideIndex = 1;
-showSlides(slideIndex);
 
-// Next/previous controls
-function plusSlides(n) {
-    showSlides(slideIndex += n);
+
+// let currentSlide = 1;
+// toThisSlide(currentSlide);
+toThisSlide(1);
+
+
+function toPrevSlide(){
+    console.log('prev slide triggered');
+    toThisSlide(-1, 'prev');
 }
 
-// Thumbnail image controls
-function currentSlide(n) {
-    showSlides(slideIndex = n);
+function toNextSlide(){
+    console.log('next slide triggered');
+    toThisSlide(1, 'next');
 }
 
-function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {
-        slideIndex = 1
+function toThisSlide(slideNumber, move = 'none' ) {
+
+    // Figure out the active slide
+    let slides = document.getElementsByClassName('basicSlider-slide');
+    
+    let activeSlide = 1;
+    for (let ele of slides){
+        if( ele.classList.contains('basicSlider-activeSlide')){
+            console.log('active slide is: ' + activeSlide);
+            break;
+        }
+        activeSlide ++;
     }
-    if (n < 1) {
-        slideIndex = slides.length
+
+    switch (move) {
+        case 'prev':
+            slides[activeSlide - 1].classList.remove('basicSlider-viewedSlide');
+            slides[activeSlide - 1].classList.remove('basicSlider-activeSlide');
+            slides[activeSlide - 2].classList.remove('basicSlider-viewedSlide');
+            slides[activeSlide - 2].classList.add('basicSlider-activeSlide');
+
+            break;
+        
+        case 'next':
+            slides[activeSlide].classList.add('basicSlider-activeSlide');
+            slides[activeSlide - 1].classList.replace('basicSlider-activeSlide', 'basicSlider-viewedSlide');
+            break;
+
+        case 'none':
+
     }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
+
+
 }
+

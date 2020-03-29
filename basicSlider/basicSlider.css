@@ -1,3 +1,6 @@
+:root{
+    --buttonsHeight: 3rem;
+}
 *{
     padding: 0;
     margin: 0;
@@ -12,18 +15,73 @@
 }
 .basicSlider-slidesWrapper{
     position: relative;
+    overflow: hidden;
 }
 .basicSlider-slide{
     position: absolute;
     top:0;
     /* bottom: 0;
     right: 0; */
-    left: 105%
+    left: 105%;
+    background-color: #eee;
 }
-
-.basicSlider-slide.activeSlide{
+.basicSlider-slide-number,
+.basicSlider-slide-caption{
+    position: absolute;
+    bottom: 0;
     left: 0;
+    right: 0;
+
+    padding: 7px;
+    text-align: center;
+    background-color: rgba(80, 80, 80, .8);
+    color: #eee;
+}
+
+.basicSlider-slide-number{
+    bottom: unset;
+    right: unset;
+    top: 0;
+}
+
+.basicSlider-slide.basicSlider-activeSlide{
+    position: relative;
+    left: 0;
+    z-index: 15;
+}
+.basicSlider-slide.basicSlider-viewedSlide{
+    position: absolute;
+    left: 0;
+    z-index: 11;
 }
 
 
+.basicSlider-prevButton,
+.basicSlider-nextButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+    position: absolute;
+    top: calc(50% - calc(var(--buttonsHeight) / 2));
+    z-index: 19;
+
+    width: calc(var(--buttonsHeight) * 0.75);
+    /* height: 10%; */
+
+    font-size: var(--buttonsHeight);
+    color: #eee;
+    background-color: rgba(80, 80, 80, .8);
+}
+.basicSlider-nextButton{
+    left: unset;
+    right: 0;
+}
+
+.basicSlider-prevButton > span,
+.basicSlider-nextButton > span{
+    display: block;
+    text-align: center;
+    /* padding: 5px 0; */
+    padding-bottom: 5px;
+}
