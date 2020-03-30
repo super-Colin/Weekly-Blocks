@@ -1,6 +1,7 @@
 :root{
     --buttonsHeight: 3rem;
 }
+
 *{
     padding: 0;
     margin: 0;
@@ -15,15 +16,20 @@
 }
 .basicSlider-slidesWrapper{
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     overflow: hidden;
+    /* height: 25rem; */
 }
 .basicSlider-slide{
     position: absolute;
     top:0;
-    /* bottom: 0;
-    right: 0; */
     left: 105%;
     background-color: #eee;
+
+    transition: all 1s;
 }
 .basicSlider-slide-number,
 .basicSlider-slide-caption{
@@ -42,6 +48,7 @@
     bottom: unset;
     right: unset;
     top: 0;
+    z-index: 19;
 }
 
 .basicSlider-slide.basicSlider-activeSlide{
@@ -49,12 +56,6 @@
     left: 0;
     z-index: 15;
 }
-.basicSlider-slide.basicSlider-viewedSlide{
-    position: absolute;
-    left: 0;
-    z-index: 11;
-}
-
 
 .basicSlider-prevButton,
 .basicSlider-nextButton{
@@ -63,12 +64,13 @@
     align-items: center;
 
     position: absolute;
+    left: 0;
     top: calc(50% - calc(var(--buttonsHeight) / 2));
     z-index: 19;
 
     width: calc(var(--buttonsHeight) * 0.75);
-    /* height: 10%; */
 
+    cursor: pointer;
     font-size: var(--buttonsHeight);
     color: #eee;
     background-color: rgba(80, 80, 80, .8);
@@ -82,6 +84,5 @@
 .basicSlider-nextButton > span{
     display: block;
     text-align: center;
-    /* padding: 5px 0; */
     padding-bottom: 5px;
 }
