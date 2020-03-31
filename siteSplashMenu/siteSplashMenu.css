@@ -1,0 +1,101 @@
+
+:root{
+    --numberOfLinks: 4;
+    --sectionHeightPercent: calc(100% / calc(var(--numberOfLinks) + 1));
+
+    --layout-main-spacing: 1rem;
+    --transition-duration: 1s;
+
+    --bg-color: #ccc;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.siteSplashMenu-container{
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+
+    background-color: var(--bg-color);
+}
+
+.siteSplashMenu-sectionsWrapper{
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+
+    /* padding: var(--layout-main-spacing); */
+}
+
+
+.siteSplashMenu-section{
+    width: 100%;
+    /* height: calc(100% / var(--numberOfLinks)); */
+    height: var(--sectionHeightPercent);
+    position: relative;
+
+    /* margin-bottom: var(--sectionHeightPercent); */
+    /* margin-bottom: calc(var(--sectionHeightPercent) / var(--numberOfLinks)); */
+    margin-bottom: calc(100% / var(--numberOfLinks));
+    overflow: hidden;
+}
+
+.siteSplashMenu-section-bg,
+.siteSplashMenu-section-content,
+.siteSplashMenu-section > img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+    max-width: 100%;
+}
+.siteSplashMenu-section-bg{
+    background-color: rgba(250, 13, 5, 0.8);
+    transition: all var(--transition-duration);
+}
+.siteSplashMenu-section:hover > .siteSplashMenu-section-bg{
+    background-color: rgba(50, 50, 250, 0);
+}
+.siteSplashMenu-section-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.siteSplashMenu-section-content > a,
+.siteSplashMenu-section-content > span{
+    display: block;
+    /* width: 100%; */
+    text-align: center;
+
+    background-color: rgba(50, 50, 50, 0.3);
+    color: white;
+
+    transition: all 1s;
+    opacity: 1;
+}
+.siteSplashMenu-section-content>a{
+    font-size: 1.5rem;
+    padding: 3px;
+}
+.siteSplashMenu-section-content > span{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    opacity: 0;
+}
+.siteSplashMenu-section:hover span {
+    opacity: 1;
+}
+
