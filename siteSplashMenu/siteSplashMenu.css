@@ -2,11 +2,12 @@
 :root{
     --numberOfLinks: 4;
     --sectionHeightPercent: calc(100% / calc(var(--numberOfLinks) + 1));
+    --sectionBlockersHeight: 100%;
 
     --layout-main-spacing: 1rem;
     --transition-duration: 1s;
 
-    --bg-color: #ccc;
+    --bg-color: #eee;
 }
 
 *{
@@ -15,40 +16,59 @@
     box-sizing: border-box;
 }
 
-.siteSplashMenu-container{
+.siteSplashMenu-container,
+.siteSplashMenu-sectionsWrapper {
     width: 100%;
     max-width: 100%;
     height: 100%;
     max-height: 100%;
-
-    background-color: var(--bg-color);
 }
-
-.siteSplashMenu-sectionsWrapper{
-    width: 100%;
-    max-width: 100%;
-    height: 100%;
-    max-height: 100%;
-
-    /* padding: var(--layout-main-spacing); */
-}
-
 
 .siteSplashMenu-section{
     width: 100%;
-    /* height: calc(100% / var(--numberOfLinks)); */
-    height: var(--sectionHeightPercent);
+    height: calc(100% / var(--numberOfLinks));
     position: relative;
-
-    /* margin-bottom: var(--sectionHeightPercent); */
-    /* margin-bottom: calc(var(--sectionHeightPercent) / var(--numberOfLinks)); */
-    margin-bottom: calc(100% / var(--numberOfLinks));
     overflow: hidden;
+}
+
+.siteSplashMenu-section-before,
+.siteSplashMenu-section-after{
+    content: '';
+    display: block;
+    width: 110%;
+    height: var(--sectionBlockersHeight);
+    position: absolute;
+    z-index: 19;
+    transform: rotate(-10deg);
+    transition: all var(--transition-duration);
+    background-color: var(--bg-color);
+}
+.siteSplashMenu-section-before{
+    top: calc(var(--sectionBlockersHeight) * -1);
+    right: 0;
+    transform-origin: bottom right;
+}
+.siteSplashMenu-section-after{
+    bottom: calc(var(--sectionBlockersHeight) * -1);
+    left: 0;
+    transform-origin: top left;
+}
+.siteSplashMenu-section:hover .siteSplashMenu-section-before,
+.siteSplashMenu-section:hover .siteSplashMenu-section-after{
+    transform: rotate(0);
+}
+
+.siteSplashMenu-section-inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 9;
 }
 
 .siteSplashMenu-section-bg,
 .siteSplashMenu-section-content,
-.siteSplashMenu-section > img{
+.siteSplashMenu-section img{
     position: absolute;
     top: 0;
     left: 0;
@@ -56,15 +76,22 @@
     bottom: 0;
 
     width: 100%;
+    height: 100%;
     max-width: 100%;
-}
-.siteSplashMenu-section-bg{
-    background-color: rgba(250, 13, 5, 0.8);
+    max-height: 100%;
+    object-fit: cover;
     transition: all var(--transition-duration);
 }
-.siteSplashMenu-section:hover > .siteSplashMenu-section-bg{
-    background-color: rgba(50, 50, 250, 0);
+
+.siteSplashMenu-section-bg1{background-color:hsla(0, 100%, 40%, 0.8);}
+.siteSplashMenu-section-bg2{background-color:hsla(60, 100%, 40%, 0.8);}
+.siteSplashMenu-section-bg3{background-color:hsla(120, 100%, 40%, 0.8);}
+.siteSplashMenu-section-bg4{background-color:hsla(200, 100%, 40%, 0.8);}
+
+.siteSplashMenu-section:hover .siteSplashMenu-section-bg{
+    background-color: rgba(255, 250, 250, 0);
 }
+
 .siteSplashMenu-section-content{
     display: flex;
     flex-wrap: wrap;
@@ -77,15 +104,16 @@
     /* width: 100%; */
     text-align: center;
 
-    background-color: rgba(50, 50, 50, 0.3);
+    background-color: rgba(50, 50, 50, 0.5);
     color: white;
 
     transition: all 1s;
     opacity: 1;
 }
-.siteSplashMenu-section-content>a{
-    font-size: 1.5rem;
+.siteSplashMenu-section-content > a{
+    font-size: 1.8rem;
     padding: 3px;
+    border-radius: 3px;
 }
 .siteSplashMenu-section-content > span{
     position: absolute;
@@ -97,5 +125,29 @@
 }
 .siteSplashMenu-section:hover span {
     opacity: 1;
+}
+
+
+@media(min-width:500px){
+    .siteSplashMenu-section-before,
+    .siteSplashMenu-section-after{
+        transform: rotate(-7deg);
+    }
+
+    .siteSplashMenu-section-content > a{
+        font-size: 2rem;
+        padding: 4px;
+    }
+}
+@media(min-width:800px){
+    .siteSplashMenu-section-before,
+    .siteSplashMenu-section-after{
+        transform: rotate(-5deg);
+    }
+
+    .siteSplashMenu-section-content > a{
+        font-size: 2.5rem;
+        padding: 6px;
+    }
 }
 
