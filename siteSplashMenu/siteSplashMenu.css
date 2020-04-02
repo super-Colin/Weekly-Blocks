@@ -3,6 +3,7 @@
     --numberOfLinks: 4;
     --sectionHeightPercent: calc(100% / calc(var(--numberOfLinks) + 1));
     --sectionBlockersHeight: 100%;
+    --sectionBlockersWidth: 100%;
 
     --layout-main-spacing: 1rem;
     --transition-duration: 1s;
@@ -31,9 +32,12 @@
     overflow: hidden;
 }
 
-.siteSplashMenu-section-before,
-.siteSplashMenu-section-after{
-    content: '';
+.siteSplashMenu-section-leftAngle,
+.siteSplashMenu-section-rightAngle{
+    display: none;
+}
+.siteSplashMenu-section-topAngle,
+.siteSplashMenu-section-bottomAngle{
     display: block;
     width: 110%;
     height: var(--sectionBlockersHeight);
@@ -43,18 +47,18 @@
     transition: all var(--transition-duration);
     background-color: var(--bg-color);
 }
-.siteSplashMenu-section-before{
+.siteSplashMenu-section-topAngle{
     top: calc(var(--sectionBlockersHeight) * -1);
     right: 0;
     transform-origin: bottom right;
 }
-.siteSplashMenu-section-after{
+.siteSplashMenu-section-bottomAngle{
     bottom: calc(var(--sectionBlockersHeight) * -1);
     left: 0;
     transform-origin: top left;
 }
-.siteSplashMenu-section:hover .siteSplashMenu-section-before,
-.siteSplashMenu-section:hover .siteSplashMenu-section-after{
+.siteSplashMenu-section:hover .siteSplashMenu-section-topAngle,
+.siteSplashMenu-section:hover .siteSplashMenu-section-bottomAngle{
     transform: rotate(0);
 }
 
@@ -101,7 +105,6 @@
 .siteSplashMenu-section-content > a,
 .siteSplashMenu-section-content > span{
     display: block;
-    /* width: 100%; */
     text-align: center;
 
     background-color: rgba(50, 50, 50, 0.5);
@@ -129,24 +132,79 @@
 
 
 @media(min-width:500px){
-    .siteSplashMenu-section-before,
-    .siteSplashMenu-section-after{
+    .siteSplashMenu-section-topAngle,
+    .siteSplashMenu-section-bottomAngle{
         transform: rotate(-7deg);
     }
-
     .siteSplashMenu-section-content > a{
         font-size: 2rem;
         padding: 4px;
     }
 }
-@media(min-width:800px){
-    .siteSplashMenu-section-before,
-    .siteSplashMenu-section-after{
+
+@media(min-width:750px){
+    .siteSplashMenu-section-topAngle,
+    .siteSplashMenu-section-bottomAngle{
         transform: rotate(-5deg);
     }
-
     .siteSplashMenu-section-content > a{
         font-size: 2.5rem;
+        padding: 6px;
+    }
+}
+
+@media(min-width:1000px){
+    .siteSplashMenu-sectionsWrapper{
+        display: flex;
+        justify-content: space-around;
+    }
+    .siteSplashMenu-section-leftAngle,
+    .siteSplashMenu-section-rightAngle {
+        display: block;
+        width: var(--sectionBlockersWidth);
+        height: 110%;
+        position: absolute;
+        z-index: 19;
+        transform: rotate(5deg);
+        transition: all var(--transition-duration);
+        background-color: var(--bg-color);
+        /* background-color: #f4f; */
+    }
+    .siteSplashMenu-section:hover .siteSplashMenu-section-leftAngle,
+    .siteSplashMenu-section:hover .siteSplashMenu-section-rightAngle{
+        transform: rotate(0);
+    }
+    .siteSplashMenu-section-topAngle,
+    .siteSplashMenu-section-bottomAngle {
+        width: 150%;
+        transform: rotate(-12deg);
+    }
+    .siteSplashMenu-section-leftAngle{
+        transform-origin: left top;
+        right: calc(var(--sectionBlockersWidth) * -1);
+        top: 0;
+    }
+    .siteSplashMenu-section-rightAngle{
+        transform-origin: right bottom;
+        left: calc(var(--sectionBlockersWidth) * -1);
+        /* bottom: calc(var(--sectionBlockersHeight) * -1); */
+        bottom: 0;
+    }
+    /* .siteSplashMenu-section-topAngle{
+        top: calc(var(--sectionBlockersHeight) * -0.9);
+    }
+    .siteSplashMenu-section-bottomAngle{
+        bottom: calc(var(--sectionBlockersHeight) * -0.9);
+    } */
+    .siteSplashMenu-section{
+        display: inline-block;
+        /* width:calc(100% / calc(var(--numberOfLinks) + 1)); */
+        width:calc(100% / var(--numberOfLinks));
+        height: 100%;
+    }
+    .siteSplashMenu-section-content>a {
+        font-style: italic;
+        font-size: 3rem;
         padding: 6px;
     }
 }
