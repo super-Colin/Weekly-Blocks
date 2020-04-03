@@ -1,0 +1,108 @@
+:root {
+    /* font-size: calc(3.89vw + 2px); */
+    /* 16px at 360px VW */
+    font-size: 16px;
+
+    /* global-concept--modifier--state--PropertyCamelCase */
+    /* global-spacing-small */
+    /* global- */
+
+
+
+    /* Spacing */
+    --global-spacing-small: .5rem;
+    --global-spacing-medium: 1.5rem;
+    --global-spacing-large: 2.5rem;
+
+
+    /* Colors */
+    --global-color-white1: #eee;
+    --global-color-lightGray1: #ccc;
+    --global-color-gray1: #888;
+    --global-color-darkGray1: #444;
+    --global-color-black1: #111;
+
+ 
+    /* Fonts */
+    --global-fontSize-title-small: 2rem;
+    --global-fontSize-title-medium: 1.8rem;
+    --global-fontSize-body: 1rem;
+
+    /* --global-fontSize-h1: 2.4rem;
+    --global-fontSize-h2: 2rem;
+    --global-fontSize-h3: 1.7rem;
+    --global-fontSize-h4: 1.4rem;
+    --global-fontSize-p: 1rem; */
+
+
+   --brand-color-main: #ff5722;
+   --brand-color-second: #559;
+
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+@media(min-width: 375px) {
+    :root {
+        /* font-size: 16px; */
+
+        --global-spacing-main: 3.75rem;
+        /* 60px */
+    }
+}
+
+@media(min-width: 720px) {
+    :root {
+        --global-spacing-main: 4.375rem;
+
+        --global-fontSize-h1: 2.7rem;
+        --global-fontSize-h2: 2.2rem;
+        --global-fontSize-h3: 1.9rem;
+        --global-fontSize-h4: 1.6rem;
+        --global-fontSize-p: 1.2rem;
+
+    }
+
+
+}
+
+@media(min-width: 1020px) {
+    :root {
+        --global-spacing-main: 5rem;
+
+        --global-fontSize-h1: 2.9rem;
+        --global-fontSize-h2: 2.4rem;
+        --global-fontSize-h3: 1.9rem;
+        --global-fontSize-h4: 1.6rem;
+        --global-fontSize-p: 1.4rem;
+    }
+
+}
+
+@media(min-width: 1320px) {
+    :root {
+        --global-spacing-main: 6.25rem;
+
+        --global-fontSize-h1: 3rem;
+        --global-fontSize-h2: 2.5rem;
+        --global-fontSize-h3: 2rem;
+        --global-fontSize-h4: 1.7rem;
+        --global-fontSize-p: 1.5rem;
+    }
+
+}
