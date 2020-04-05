@@ -1,15 +1,34 @@
 @import '../base-vars.css';
 
-.sidebarMenu-container{
-    /* --tabSmaller-width: 7vw;
-    --tabLarger-width: calc(var(--tabSmaller-width) * 3); */
-
-    --sidebar-iconsTab-width: 7vw;
+:root{
+    --sidebar-iconsTab-width: 15vw;
     --sidebar-hideableTab-width:calc(var(--sidebar-iconsTab-width) * 3);
+}
+.sidebarMenu-container{
+    
+    /* --sidebar-iconsTab-width: 15vw; */
+    /* --sidebar-hideableTab-width:calc(var(--sidebar-iconsTab-width) * 3); */
 
+
+    --sidebar-icons-minDiameter: 50px;
+    --sidebar-icons-diameter: var(--sidebar-iconsTab-width);
+
+}
+/* So the body content doesn't flow under the sidebar */
+body {
+    padding-left: var(--sidebar-iconsTab-width) !important;
+}
+body.sidebarMenu-expanded{
+    padding-left: calc(var(--sidebar-hideableTab-width) + var(--sidebar-iconsTab-width)) !important;
 }
 
 
+/* This maintains a square aspect ratio on the icons in the element */
+.sidebarMenu-icon-container {
+    min-width: var(--sidebar-icons-minDiameter);
+    width: var(--sidebar-icons-diameter);
+    overflow: hidden;
+}
 
 
 
@@ -23,29 +42,48 @@
     left: 0;
 
     min-width: 50px;
-    width: 100vw;
-    max-width: 100%;
+    width: 100%;
+    /* max-width: 100%; */
     height: 100vh;
     max-height: 100%;
 }
 
 .sidebarMenu-hideableTab{  
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
 
     height: 100%;
     /* min-width: 100px; */
-    width: calc(100vw - var(--sidebar-iconsTab-width));
+    width: calc(100% - var(--sidebar-iconsTab-width));
 
+    background-color: var(--brand-color-lightAccent1);
 }
 .sidebarMenu-hideableTab-linksWrapper{
-    display: block;
     width: 100%;
+    height: calc(90% - var(--sidebar-icons-diameter));
 }
-.sidebarMenu-hideableTab-linksWrapper a {
+.sidebarMenu-hideableTab-linksWrapper ul{
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+
+}
+.sidebarMenu-hideableTab-linksWrapper a{
     display: block;
     text-align: center;
+    font-size: var(--global-fontSize-title-small);
 }
+
+.sidebarMenu-hideableTab-socialIcons{
+    min-height: var(--sidebar-icons-minDiameter);
+    height: var(--sidebar-icons-diameter);
+    display: flex;
+    justify-content: space-around;
+}
+
+
 
 
 .sidebarMenu-iconsTab{
@@ -54,19 +92,33 @@
     justify-content: space-between;
 
     height: 100%;
-    min-width: 50px;
+    min-width: var(--sidebar-icons-minDiameter);
     width: var(--sidebar-iconsTab-width);
-    /* max-width: 80px; */
+
+    background-color: var(--brand-color-darkShade1);
+}
+
+.sidebarMenu-iconsTab-toggleWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height:20%;
 }
 
 .sidebarMenu-iconsTab-toggleTabButton,
 .sidebarMenu-iconsTab-nightModeButton{
-    width:50px;
-    height: 50px;
-    background-color: yellowgreen;
+    min-width: var(--sidebar-icons-minDiameter);
+    width:var(--sidebar-icons-diameter);
+
+    padding-top: 100%;
+    position: relative;
+
+
+    border-radius: 50%;
+    background-color: var(--brand-color-main1);
 }
 .sidebarMenu-iconsTab-nightModeButton{
-        background-color: rgb(98, 136, 21);
+        /* background-color: var(--brand-color-darkAccent1); */
 }
 
 .sidebarMenu-iconsTab-logoWrapper img{
@@ -75,3 +127,8 @@
     padding: 3px;
 }
 
+@media(min-width: 440px){
+    .sidebarMenu-container{
+        --sidebar-iconsTab-width: 10vw;
+    }
+}

@@ -1,0 +1,24 @@
+@import './base-vars.css' ;
+
+:root{
+    --lightMode-bg-color:var(--brand-color-lightShade1);
+    --lightMode-text-color: var(--brand-color-darkShade1);
+
+    --darkMode-bg-color:var(--brand-color-darkShade1);
+    --darkMode-text-color:var(--brand-color-lightShade1);
+
+    --darkMode-currentBG-color: var(--lightMode-bg-color);
+    --darkMode-currentText-color: var(--darkMode-bg-color);
+}
+
+body{
+    background-color: var(--lightMode-bg-color);
+    color: var(--darkMode-bg-color);
+    background-color: var(--darkMode-currentBG-color);
+    color: var(--darkMode-currentText-color);
+}
+body.darkMode-active{
+    background-color: var(--darkMode-bg-color);
+    color: var(--lightMode-bg-color);
+}
+
