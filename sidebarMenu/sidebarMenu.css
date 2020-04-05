@@ -1,18 +1,77 @@
 @import '../base-vars.css';
 
+.sidebarMenu-container{
+    /* --tabSmaller-width: 7vw;
+    --tabLarger-width: calc(var(--tabSmaller-width) * 3); */
+
+    --sidebar-iconsTab-width: 7vw;
+    --sidebar-hideableTab-width:calc(var(--sidebar-iconsTab-width) * 3);
+
+}
+
+
+
+
 
 .sidebarMenu-container{
-    --test: red;
+    display: flex;
 
-    background-color: yellowgreen;
-    width: 15vw;
+
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+
+    min-width: 50px;
+    width: 100vw;
+    max-width: 100%;
+    height: 100vh;
+    max-height: 100%;
 }
 
-.sidebarMenu-hideableTab{
+.sidebarMenu-hideableTab{  
+    display: flex;
+    align-items: center;
+
+    height: 100%;
+    /* min-width: 100px; */
+    width: calc(100vw - var(--sidebar-iconsTab-width));
 
 }
+.sidebarMenu-hideableTab-linksWrapper{
+    display: block;
+    width: 100%;
+}
+.sidebarMenu-hideableTab-linksWrapper a {
+    display: block;
+    text-align: center;
+}
+
 
 .sidebarMenu-iconsTab{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
+    height: 100%;
+    min-width: 50px;
+    width: var(--sidebar-iconsTab-width);
+    /* max-width: 80px; */
+}
+
+.sidebarMenu-iconsTab-toggleTabButton,
+.sidebarMenu-iconsTab-nightModeButton{
+    width:50px;
+    height: 50px;
+    background-color: yellowgreen;
+}
+.sidebarMenu-iconsTab-nightModeButton{
+        background-color: rgb(98, 136, 21);
+}
+
+.sidebarMenu-iconsTab-logoWrapper img{
+    width: 100%;
+    max-width: 100%;
+    padding: 3px;
 }
 
