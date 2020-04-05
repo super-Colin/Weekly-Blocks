@@ -16,6 +16,10 @@
 
 
     /* Colors */
+    --global-color-warning: #d62;
+    --global-color-danger: #d22;
+    --global-color-sucess: #2d2;
+
     --global-color-white1: #eee;
     --global-color-lightGray1: #ccc;
     --global-color-gray1: #888;
@@ -24,9 +28,12 @@
 
  
     /* Fonts */
-    --global-fontSize-title-small: 2rem;
-    --global-fontSize-title-medium: 1.8rem;
-    --global-fontSize-body: 1rem;
+    --global-fontSize-title-small: 1.7rem;
+    --global-fontSize-title-medium: 2rem;
+    --global-fontSize-title-large: 2.4rem;
+    --global-fontSize-body-small: .8rem;
+    --global-fontSize-body-medium: 1rem;
+    --global-fontSize-body-large: 1.2rem;
 
     /* --global-fontSize-h1: 2.4rem;
     --global-fontSize-h2: 2rem;
@@ -47,6 +54,10 @@
     padding: 0;
     margin: 0;
     font-family: inherit;
+}
+body{
+    max-width: 100%;
+    overflow: hidden;
 }
 
 a {

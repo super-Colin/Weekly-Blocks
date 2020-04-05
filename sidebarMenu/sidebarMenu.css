@@ -1,0 +1,18 @@
+@import '../base-vars.css';
+
+
+.sidebarMenu-container{
+    --test: red;
+
+    background-color: yellowgreen;
+    width: 15vw;
+}
+
+.sidebarMenu-hideableTab{
+
+}
+
+.sidebarMenu-iconsTab{
+
+}
+
