@@ -1,9 +1,12 @@
 
+document.getElementById('sidebarMenu-iconsTab-toggleTabButton').addEventListener('click', toggleExpandingSidebar);
+function toggleExpandingSidebar(){
+    document.body.classList.toggle('sidebarMenu-expanded');
+}
 
 
-//sidebar toggle button:
-// add class "sidebarMenu-expanded" to body element
-
-// darkMode button:
-// add class "darkMode-active" to body element
+document.getElementById('sidebarMenu-iconsTab-darkModeButton').addEventListener('click', toggleDarkMode);
+function toggleDarkMode() {
+    document.body.classList.toggle('darkMode-active');
+}
 

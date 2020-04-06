@@ -33,9 +33,11 @@
 
 
     /* Spacing */
-    --global-spacing-small: .5rem;
-    --global-spacing-medium: 1.5rem;
-    --global-spacing-large: 2.5rem;
+    --global-spacing-smaller: .3rem;
+    --global-spacing-small: .6rem;
+    --global-spacing-medium: 1.2rem;
+    --global-spacing-large: 2rem;
+    --global-spacing-larger: 2.6rem;
 
 
     /* Colors */
@@ -61,6 +63,14 @@
     /* Dark Mode */
     --darkMode-currentColor-bg: var(--brand-color-lightShade1);
     --darkMode-currentColor-text: var(--brand-color-darkShade1);
+}
+body.darkMode-active{
+    --darkMode-currentColor-bg: var(--brand-color-darkShade1);
+    --darkMode-currentColor-text: var(--brand-color-lightShade1);
+    /* reverse the dark and light accent */
+    --brand-color-darkAccent1: #EFAF5E;
+    --brand-color-lightAccent1: #B9514A;
+
 }
 
 *,
