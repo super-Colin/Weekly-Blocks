@@ -1,0 +1,183 @@
+@import '../base-vars.css';
+
+.moonToSun-icon-container{
+    --icon-diameter: var(--sidebar-icons-minDiameter);
+    --icon-diameter: var(--sidebar-icons-diameter);
+    --icon-maxDiameter: var(--sidebar-icons-maxDiameter);
+
+    --transition-duration: var(--global-timing-transition-duration);
+    
+    --moon-color-crescent: var(--brand-color-lightShade1);
+    --moon-color-bg: var(--brand-color-darkShade1);
+    --sun-color-sun: rgb(255, 166, 0);
+    --sun-color-sun-shines: rgb(255, 122, 0);
+
+    /* ! we use the dark shade again here since we are now in dark mode, 
+    the dark and light shades have been reversed ! */
+    --sun-color-bg: var(--brand-color-darkShade1);
+
+
+    /* min-width: var(--icon-diameter); */
+    width: var(--icon-diameter);
+    max-width: var(--icon-maxDiameter);
+}
+
+.moonToSun-icon-innerContainer{
+    position: relative;
+
+    width: 100%;
+    padding-bottom: 100%;
+
+    border-radius: 10%;
+
+    overflow: hidden;
+}
+
+
+.moonToSun-inner-sunContainer,
+.moonToSun-inner-moonContainer{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+/* Moon */
+.moonToSun-inner-moonContainer{
+    background-color: var(--moon-color-bg);
+    
+    opacity: 1;
+    transition: opacity var(--transition-duration);
+}
+.moonToSun-moon-moonCrescent-umbra,
+.moonToSun-moon-moonCrescent{
+    position: absolute;
+    top:25%;
+    left: 25%;
+    
+    width:50%;
+    padding-bottom: 50%;
+    
+    border-radius: 50%;
+}
+.moonToSun-moon-moonCrescent{
+    background-color: var(--moon-color-crescent);
+}
+.moonToSun-moon-moonCrescent-umbra{
+    background-color: var(--moon-color-bg);
+    left:17%;
+}
+
+.moonToSun-moon-star{
+    position: absolute;
+
+    height: 4px;
+    width: 4px;
+    background-color: white;
+    border-radius: 2px;
+
+    opacity: 0.7;
+}
+.moonToSun-moon-star1{
+    top: 6%;
+    left: 79%;
+
+    opacity: 0.6;
+}
+.moonToSun-moon-star2{
+    top: 10%;
+    left: 33%;
+}
+.moonToSun-moon-star3{
+    top: 42%;
+    left: 12%;
+
+    opacity: 0.4;
+}
+.moonToSun-moon-star4{
+    top: 69%;
+    left: 82%;
+    
+    opacity: 0.5;
+}
+.moonToSun-moon-star5{
+    top: 82%;
+    left: 25%;
+}
+
+
+/* Sun */
+.moonToSun-inner-sunContainer{
+    background-color: var(--sun-color-bg);
+    /* background-image: linear-gradient(to bottom, var(--brand-color-lightAccent1), var(--brand-color-darkAccent1)); */
+}
+
+.moonToSun-sun-sunCenter{
+    position: absolute;
+    top:25%;
+    left: 25%;
+
+    width:50%;
+    padding-bottom: 50%;
+
+    border-radius: 50%;
+
+    background-color: var(--sun-color-sun);
+}
+
+.moonToSun-sun-shine{
+    position: absolute;
+
+    border-right: calc(var(--icon-diameter) / 13) solid transparent;
+    border-left: calc(var(--icon-diameter) / 13) solid transparent;
+    border-bottom: calc(var(--icon-diameter) / 6.5) solid var(--sun-color-sun-shines);
+}
+.moonToSun-sun-sunTop{
+    left:calc(50% - calc(var(--icon-diameter) / 13));
+    bottom: 85%;
+}
+.moonToSun-sun-sunBottom{
+    left:calc(50% - calc(var(--icon-diameter) / 13));
+    top: 85%;
+    transform: rotate(180deg);
+}
+.moonToSun-sun-sunRight{
+    left: 85%;
+    top:calc(50% - calc(var(--icon-diameter) / 13));
+    transform: rotate(90deg);
+}
+.moonToSun-sun-sunLeft{
+    right: 85%;
+    top:calc(50% - calc(var(--icon-diameter) / 13));
+    transform: rotate(-90deg);
+}
+
+.moonToSun-sun-sunTopLeft{
+    left:calc(20% - calc(var(--icon-diameter) / 13));
+    /* bottom: 80%; */
+    bottom: calc(80% - calc(var(--icon-diameter) / 13));
+    transform: rotate(-45deg);
+}
+.moonToSun-sun-sunTopRight{
+    left:calc(80% - calc(var(--icon-diameter) / 13));
+    bottom: calc(80% - calc(var(--icon-diameter) / 13));
+    transform: rotate(45deg);
+}
+.moonToSun-sun-sunBottomLeft{
+    left:calc(20% - calc(var(--icon-diameter) / 13));
+    bottom: calc(20% - calc(var(--icon-diameter) / 13));
+    transform: rotate(-135deg);
+}
+.moonToSun-sun-sunBottomRight{
+    left:calc(80% - calc(var(--icon-diameter) / 13));
+    bottom: calc(20% - calc(var(--icon-diameter) / 13));
+    transform: rotate(135deg);
+}
+
+
+
+.darkMode-active .moonToSun-inner-moonContainer {
+    opacity: 0;
+}

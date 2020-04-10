@@ -1,3 +1,11 @@
+body.darkMode-active {
+    /* reverse the dark and light colors */
+    --brand-color-darkAccent1: #EFAF5E;
+    --brand-color-lightAccent1: #B9514A;
+    --brand-color-darkShade1: #F2ECE7;
+    --brand-color-lightShade1: #392E42;
+}
+
 :root {
     font-size: 16px;
     
@@ -30,7 +38,8 @@
     or as the background for inverted designs. */
 
 
-
+    /* Timing */
+    --global-timing-transition-duration: 1s;
 
     /* Spacing */
     --global-spacing-smaller: .3rem;
@@ -60,18 +69,8 @@
     --global-fontSize-body-medium: 1.1rem;
     --global-fontSize-body-large: 1.3rem;
 
-    /* Dark Mode */
-    --darkMode-currentColor-bg: var(--brand-color-lightShade1);
-    --darkMode-currentColor-text: var(--brand-color-darkShade1);
 }
-body.darkMode-active{
-    --darkMode-currentColor-bg: var(--brand-color-darkShade1);
-    --darkMode-currentColor-text: var(--brand-color-lightShade1);
-    /* reverse the dark and light accent */
-    --brand-color-darkAccent1: #EFAF5E;
-    --brand-color-lightAccent1: #B9514A;
 
-}
 
 *,
 *::before,
@@ -80,6 +79,7 @@ body.darkMode-active{
     padding: 0;
     margin: 0;
     font-family: inherit;
+    transition: background-color var(--global-timing-transition-duration);
 }
 body{
     background-color: var(--darkMode-currentColor-bg);
