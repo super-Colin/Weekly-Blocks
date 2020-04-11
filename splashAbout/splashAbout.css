@@ -1,0 +1,38 @@
+@import '../base-vars.css';
+
+.splashAbout-container{
+
+
+
+
+    max-width: 100%;
+}
+
+
+.splashAbout-values-container{
+    display: flex;
+    flex-wrap: wrap;
+
+    max-width: 100%;
+}
+.splashAbout-value-container{
+    width: 50%;
+    max-width: 50%;
+}
+
+.splashAbout-value-icon{
+
+}
+.splashAbout-value-icon img{
+    max-width: 100%;
+}
+.splashAbout-value-text{
+
+}
+.splashAbout-value-text h4{
+    text-align: center;
+}
+.splashAbout-value-text p{
+    text-align: center;
+}
+
