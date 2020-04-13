@@ -185,7 +185,7 @@ flex-wrap: wrap;
         width: 100%;
     }
 
-    /* .splashAbout-meAndSkills-container{
+    .splashAbout-meAndSkills-container{
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -193,5 +193,5 @@ flex-wrap: wrap;
     .splashAbout-me-container,
     .splashAbout-skillsBreakdown-container{
         width: calc(50% - calc(var(--splashAbout-padding-horizontal) / 2));
-    } */
+    }
 }
