@@ -7,31 +7,38 @@ body.darkMode-active {
 }
 
 :root {
-    font-size: 16px;
+    /* font-size: 16px; */
+    font-size: calc(15px + 1vw);
     
 
     /* Brand Vars */
 
+    --brand-color-lightShade1-constant: #F2ECE7;
     --brand-color-lightShade1: #F2ECE7;
     /* Light shades
     Use this color as the background for your dark-on-light designs,
     or the text color of an inverted design. */
 
+    --brand-color-lightAccent1-constant: #EFAF5E;
     --brand-color-lightAccent1: #EFAF5E;
     /* Light accent
     Accent colors can be used to bring attention to design elements 
     by contrasting with the rest of the palette. */
 
+    --brand-color-main1-constant: #ED6C25;
     --brand-color-main1: #ED6C25;
+    --brand-color-main1-darker: rgb(173, 70, 15);
     /* Main brand color
     This color should be eye-catching but not harsh.
     It can be liberally applied to your layout as its main identity. */
 
+    --brand-color-darkAccent1-constant: #B9514A;
     --brand-color-darkAccent1: #B9514A;
     /* Dark accent
     Another accent color to consider.
     Not all colors have to be used - sometimes a simple color scheme works best. */
    
+    --brand-color-darkShade1-constant: #392E42;
     --brand-color-darkShade1: #392E42;
     /* Dark shades
     Use as the text color for dark-on-light designs, 
@@ -43,10 +50,15 @@ body.darkMode-active {
 
     /* Spacing */
     --global-spacing-smaller: .3rem;
+    /* smaller spacing is best for a small, subtle nudge on something */
     --global-spacing-small: .6rem;
+    /* small spacing is for good for spacing under a small h tag (h3-ish) */
     --global-spacing-medium: 1.2rem;
+    /* medium spacing is your go to for most padding and margins */
     --global-spacing-large: 2rem;
+    /* large spacing are more for vertical spacing(margin) from block to block or large titles */
     --global-spacing-larger: 2.6rem;
+    /* larger spacing are more for vertical spacing(margin) from section to section */
 
 
     /* Colors */
@@ -82,8 +94,8 @@ body.darkMode-active {
     transition: background-color var(--global-timing-transition-duration);
 }
 body{
-    background-color: var(--darkMode-currentColor-bg);
-    color: var(--darkMode-currentColor-text);
+    background-color: var(--brand-color-lightShade1);
+    color: var(--brand-color-darkShade1);
 }
 
 /* img{
