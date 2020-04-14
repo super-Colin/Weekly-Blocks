@@ -143,19 +143,26 @@ flex-wrap: wrap;
     /* height: 100%; */
 }
 .splashAbout-skill-progress{
+    position: relative;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     height: 100%;
 
-    background-color: var(--splashAbout-color-mainShade);
-    /* background-color: var(--splashAbout-color-darkShade); */
     color: var(--splashAbout-color-lightShade-constant);
 }
+.splashAbout-skill-progressBg{
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--splashAbout-color-main);
+    filter: brightness(0.7);
+}
 .splashAbout-skill-number{
-    /* margin-left: 5%; */
-
-    margin-left: var(--splashAbout-padding-horizontal);
+    position: absolute;
+    left: var(--splashAbout-padding-horizontal);
 }
 
 
@@ -188,7 +195,7 @@ flex-wrap: wrap;
     .splashAbout-meAndSkills-container{
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: stretch;
     }
     .splashAbout-me-container,
     .splashAbout-skillsBreakdown-container{
