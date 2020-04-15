@@ -1,4 +1,4 @@
-@import '../base-vars.css';
+@import '../global-vars.css';
 
 .sidebarMenu-container{
     --sidebar-containerTabs-padding-vertical: var(--global-spacing-medium);

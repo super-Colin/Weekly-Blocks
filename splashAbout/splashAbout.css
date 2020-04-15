@@ -1,4 +1,4 @@
-@import '../base-vars.css';
+@import '../global-vars.css';
 
 .splashAbout-container{
     --splashAbout-padding-horizontal: var(--global-spacing-medium);

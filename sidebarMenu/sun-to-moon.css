@@ -1,4 +1,4 @@
-@import '../base-vars.css';
+@import '../global-vars.css';
 
 .moonToSun-icon-container{
     --icon-diameter: var(--sidebar-icons-minDiameter);
