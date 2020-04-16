@@ -4,14 +4,13 @@
     --sidebar-containerTabs-padding-vertical: var(--global-spacing-medium);
     --sidebar-containerTabs-padding-horizontal: var(--global-spacing-small);
 
-    --sidebar-iconsTab-width: 70px;
-    --sidebar-hideableTab-width:calc(var(--sidebar-iconsTab-width) * 3);
+    --sidebar-iconsTab-width: calc(60px + 3vw);
+    --sidebar-hideableTab-width:calc(var(--sidebar-iconsTab-width) * 2.5);
 
-    /* --sidebar-icons-minDiameter: 50px; */
     --sidebar-icons-diameter: calc(var(--sidebar-iconsTab-width) - calc(var(--sidebar-containerTabs-padding-horizontal) * 2));
     --sidebar-icons-maxDiameter: 100px;
 
-
+    --sideBar-fontSize-links: var(--global-fontSize-body-large);
 }
 
 /* So the body content doesn't flow under the sidebar */
@@ -31,8 +30,6 @@ body.sidebarMenu-expanded{
     overflow: hidden;
 }
 
-
-
 /* ----------------------------------------------- */
 
 .sidebarMenu-container{
@@ -41,18 +38,16 @@ body.sidebarMenu-expanded{
     position: fixed;
     z-index: 9999;
     top: 0;
-    left: calc(-100% + var(--sidebar-iconsTab-width));
-    /* right: calc(100% - var(--sidebar-iconsTab-width)); */
-    transition: left 1s;
+    right: calc(100% - var(--sidebar-iconsTab-width));
+    transition: right 1s;
 
-    /* min-width: 50px; */
     width: 100%;
     max-width: 100%;
     height: 100vh;
     max-height: 100%;
 }
 body.sidebarMenu-expanded .sidebarMenu-container {
-    left: 0;
+    right: 0;
 }
 
 .sidebarMenu-hideableTab{
@@ -84,7 +79,7 @@ justify-content: space-between;
     color: var(--darkMode-currentColor-text);
     color: var(--brand-color-darkAccent1);
     text-align: center;
-    font-size: var(--global-fontSize-title-small);
+    font-size: var(--sideBar-fontSize-links);
 }
 
 .sidebarMenu-hideableTab-socialIcons{
@@ -105,7 +100,6 @@ justify-content: space-between;
     align-items: center;
 
     height: 100%;
-    /* min-width: calc(var(--sidebar-icons-minDiameter) + calc(var(--global-spacing-small) * 2)); */
     padding: var(--global-spacing-small);
     width: var(--sidebar-iconsTab-width);
     max-width: var(--sidebar-iconsTab-width);
@@ -121,7 +115,6 @@ justify-content: space-between;
     align-items: center;
 
     height: 30%;
-    /* min-height: 30%; */
 }
 .sidebarMenu-iconsTab-toggleWrapper .sidebarMenu-icon-container {
     padding-bottom: var(--sidebar-containerTabs-padding-vertical);
@@ -129,7 +122,6 @@ justify-content: space-between;
 
 .sidebarMenu-iconsTab-toggleTabButton,
 .sidebarMenu-iconsTab-darkModeButton{
-    /* min-width: var(--sidebar-icons-minDiameter); */
     width:var(--sidebar-icons-diameter);
     max-width: var(--sidebar-icons-maxDiameter);
 
@@ -145,17 +137,14 @@ justify-content: space-between;
 .sidebarMenu-iconsTab-darkModeButton{padding: 0;}
 
 .sidebarMenu-iconsTab-toggleTabButton{
-    /* margin-bottom: var(--sidebar-containerTabs-padding-vertical); */
 }
 .sidebarMenu-iconsTab-darkModeButton{
-        /* background-color: var(--brand-color-darkAccent1); */
         border-radius: 25%;
 }
 .sidebarMenu-iconsTab-logoWrapper{
     display: flex;
     justify-content: flex-end;
 
-    /* height: 60%; */
     max-height: 60%;
     padding: 3px;
 
@@ -169,6 +158,22 @@ justify-content: space-between;
 
 @media(min-width: 520px){
     .sidebarMenu-container{
-        --sidebar-iconsTab-width: 80px;
+        --sidebar-iconsTab-width: calc(80px + 1vw);
+    }
+}
+
+@media(min-width: 1020px){
+    /* body.sidebarMenu-expanded {
+        padding-left: calc(var(--sidebar-hideableTab-width) + var(--sidebar-iconsTab-width)) !important;
+    } */
+    .sidebarMenu-container {
+        --sidebar-hideableTab-width:calc(var(--sidebar-iconsTab-width) * 2.5);
+        width: auto;
+    }
+    body.sidebarMenu-expanded .sidebarMenu-container {
+        right: calc(100% - calc(var(--sidebar-hideableTab-width) + var(--sidebar-iconsTab-width)));
+    }
+    .sidebarMenu-hideableTab{
+        width: var(--sidebar-hideableTab-width);
     }
 }

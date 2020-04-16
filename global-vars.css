@@ -73,12 +73,12 @@ body.darkMode-active {
 
  
     /* Fonts */
-    --global-fontSize-title-small: 1.7rem;
+    --global-fontSize-title-small: 1.6rem;
     --global-fontSize-title-medium: 2rem;
     --global-fontSize-title-large: 2.4rem;
     --global-fontSize-body-small: .9rem;
     --global-fontSize-body-medium: 1.1rem;
-    --global-fontSize-body-large: 1.3rem;
+    --global-fontSize-body-large: 1.4rem;
 
 }
 
@@ -120,6 +120,8 @@ li {
 
 @media(min-width: 720px) {
     :root {
+    font-size: calc(15px + 0.5vw);
+        
         --global-spacing-main: 4.375rem;
 
         --global-fontSize-h1: 2.7rem;
