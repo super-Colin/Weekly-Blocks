@@ -1,0 +1,12 @@
+
+
+:root{
+    --overall-width: 120px;
+    --bar-width: 10px;
+}
+
+
+.radial-progress-bar{
+    position: relative;
+}
+

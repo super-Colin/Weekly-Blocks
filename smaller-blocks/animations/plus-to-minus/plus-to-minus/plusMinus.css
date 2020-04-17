@@ -1,0 +1,62 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --box-size: 4rem;
+    --color-main:#ea5;
+    --line-thickness: calc(var(--box-size) * .12);
+    --inner-padding: calc(var(--box-size) * .15);
+    --transition-time: 1s;
+}
+
+/* -- REMOVABLE -- */
+.plusMinus-icon-wrapper{margin: 30px;background-color: #ccc;}
+/* -- REMOVABLE -- */
+
+
+.plusMinus-icon-wrapper {
+    height: var(--box-size);
+    width: var(--box-size);
+}
+.plusMinus-icon{
+    height: 100%;
+    width: 100%;
+    padding: var(--inner-padding);
+
+    position: relative;
+}
+
+.plusMinus-horizontal,
+.plusMinus-vertical{
+    display: block;
+    height: var(--line-thickness);
+    width: calc(var(--box-size) - calc(var(--inner-padding) * 2));
+    background-color: var(--color-main);
+    border-radius: calc(var(--line-thickness) / 2);
+
+    transition: width var(--transition-time), left var(--transition-time);
+
+    position: absolute;
+    top: calc(50% - calc(var(--line-thickness) / 2));
+    left: var(--inner-padding);
+}
+.plusMinus-vertical{
+    transform: rotate(90deg);
+}
+
+/* ACTIVE STATE */
+/* on hover and with "active" class added to the "bookshelfTabs-icon" div */
+
+/* .plusMinus-icon:hover *.child* */
+
+.plusMinus-icon:hover .plusMinus-vertical{
+    width: 0;
+    left: calc(50% - calc(var(--line-thickness) / 2));
+    left: 50%;
+}
+

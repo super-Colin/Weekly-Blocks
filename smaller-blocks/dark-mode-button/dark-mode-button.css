@@ -1,0 +1,53 @@
+:root{
+    --scroll-progress-bar__height: 10px;
+    --header-height: 150px;
+    
+    --color-main-brand:rgb(255, 68, 0);
+    /* --color-second-brand: rgb(152, 251, 152); */
+    --color-second-brand: #bbb;
+    --color-main-bg: #efefef;
+    --color-main-text: #111;
+
+    --dark-color-main-brand:rgb(225, 38, 0);
+    /* --dark-color-second-brand: rgb(122, 221, 122); */
+    --dark-color-second-brand: #888;
+    --dark-color-main-bg: #111;
+    --dark-color-main-text: #fff;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    /* color: inherit; */
+}
+body{
+    /* margin-top:var(--header-height); */
+    padding-top: var(--header-height);
+    background-color: var(--color-main-bg);
+    color: var(--color-main-text);
+}
+body.dark-mode{
+    background-color: var(--dark-color-main-bg);
+    color: var(--dark-color-main-text);
+}
+
+header{
+    width: 100%;
+    background-color: var(--color-main-brand);
+    height: var(--header-height);
+    position: fixed;
+    top: 0;
+}
+.dark-mode header {
+    background-color: var(--dark-color-main-brand);
+}
+
+.filler{
+    padding: 500px 100px;
+    margin: 50px;
+    background-color: var(--color-second-brand);
+}
+.dark-mode .filler{
+    background-color: var(--dark-color-second-brand);
+}
+

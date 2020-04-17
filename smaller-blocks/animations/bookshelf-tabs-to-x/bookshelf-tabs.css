@@ -1,0 +1,94 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --box-size: 3rem;
+    --color-main:#ea5;
+    --line-thickness: calc(var(--box-size) * .12);
+    --inner-padding: calc(var(--box-size) * .15);
+    --transition-time: 1s;
+}
+
+
+
+/* -- REMOVABLE -- */
+.bookshelfTabs-icon-wrapper{margin: 30px;background-color: #ccc;}
+/* -- REMOVABLE -- */
+
+
+.bookshelfTabs-icon-wrapper {
+    height: var(--box-size);
+    width: var(--box-size);
+}
+.bookshelfTabs-icon{
+    height: 100%;
+    width: 100%;
+    padding: var(--inner-padding);
+
+    position: relative;
+}
+
+.bookshelf-top,
+.bookshelf-middle,
+.bookshelf-bottom{
+    position: absolute;
+    left: var(--inner-padding);
+    
+    display: block;
+    width: calc(var(--box-size) - calc(var(--inner-padding) * 2));
+    height: var(--line-thickness);
+    border-radius: calc(var(--line-thickness) / 2);
+
+    background-color: var(--color-main);
+    transition: 
+        left var(--transition-time), 
+        top var(--transition-time),
+        bottom var(--transition-time),
+        width calc(var(--transition-time) * 1.2), 
+        transform var(--transition-time);
+}
+.bookshelf-top{
+    top: var(--inner-padding);
+}
+.bookshelf-bottom{
+    bottom: var(--inner-padding);
+}
+
+.bookshelf-middle {
+    top: calc(50% - calc(var(--line-thickness) / 2));
+}
+
+
+
+/* ACTIVE STATE */
+/* on hover and with "active" class added to the "bookshelfTabs-icon" div */
+
+/* .bookshelfTabs-icon:hover *.child* */
+
+.bookshelfTabs-icon:hover .bookshelf-top,
+.bookshelfTabs-icon:hover .bookshelf-bottom,
+.bookshelfTabs-icon.active .bookshelf-top,
+.bookshelfTabs-icon.active .bookshelf-bottom{
+    width: var(--box-size);
+    left: 0;
+}
+.bookshelfTabs-icon:hover .bookshelf-top,
+.bookshelfTabs-icon.active .bookshelf-top{
+    transform: rotate(45deg);
+    top: calc(50% - calc(var(--line-thickness) / 2));
+}
+.bookshelfTabs-icon:hover .bookshelf-bottom,
+.bookshelfTabs-icon.active .bookshelf-bottom{
+    transform: rotate(-45deg);
+    bottom: calc(50% - calc(var(--line-thickness) / 2));
+}
+
+.bookshelfTabs-icon:hover .bookshelf-middle,
+.bookshelfTabs-icon.active .bookshelf-middle {
+    width: 0;
+    left: 50%;
+}

@@ -1,0 +1,19 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --box-size: 10rem;
+    --color-main:#ea5;
+}
+
+.plusMinus-horizontal,
+.plusMinus-vertical,
+.plusMinus-chevron-left,
+.plusMinus-chevron-right{
+
+}

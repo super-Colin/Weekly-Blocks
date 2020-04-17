@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+html{
+    font-family: monospace;
+    font-size: 20px;
+    background-color: black;
+    color: #0F0;
+}
+
+.relative{
+    position: relative;
+}
+
+
+.line{
+    display: block;
+    background-color: white;
+    /* background-color: black; */
+    position: absolute;
+    height: 4px;
+
+}
+
+
+.relative p{
+    display: inline-block;
+    margin: 0;
+}
+#binary-art-wrapper{
+    position: relative;
+    max-width: 100%;
+    max-height: 100vh;
+    overflow: hidden;
+}
+#binary-art-wrapper p{
+    position: relative;
+}
+#binary-art-p{
+    position: relative;
+}

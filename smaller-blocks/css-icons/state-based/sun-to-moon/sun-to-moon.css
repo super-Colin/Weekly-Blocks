@@ -1,0 +1,175 @@
+
+.moonToSun-icon-container{
+    --icon-minDiameter: 60px;
+    --icon-diameter: 10vw;
+    --icon-maxDiameter: 75px;
+
+    --transition-duration: 0.5s;
+
+
+
+    min-width: var(--icon-minDiameter);
+    width: var(--icon-diameter);
+    max-width: var(--icon-maxDiameter);
+}
+
+.moonToSun-icon-innerContainer{
+    position: relative;
+
+    width: 100%;
+    padding-bottom: 100%;
+
+    border-radius: 10%;
+    background-color: red;
+
+    overflow: hidden;
+}
+
+
+.moonToSun-inner-sunContainer,
+.moonToSun-inner-moonContainer{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+/* Moon */
+.moonToSun-inner-moonContainer{
+    background-color: darkblue;
+    
+    opacity: 1;
+    /* opacity: 0; */
+    transition: opacity var(--transition-duration);
+}
+.moonToSun-moon-moonCrescent-umbra,
+.moonToSun-moon-moonCrescent{
+    position: absolute;
+    top:25%;
+    left: 25%;
+    
+    width:50%;
+    padding-bottom: 50%;
+    
+    border-radius: 50%;
+
+    background-color: lightgray;
+}
+.moonToSun-moon-moonCrescent-umbra{
+    background-color: darkblue;
+    left:17%;
+}
+
+.moonToSun-moon-star{
+    position: absolute;
+
+    height: 4px;
+    width: 4px;
+    background-color: white;
+    border-radius: 2px;
+
+    opacity: 0.7;
+}
+.moonToSun-moon-star1{
+    top: 6%;
+    left: 79%;
+
+    opacity: 0.6;
+}
+.moonToSun-moon-star2{
+    top: 10%;
+    left: 33%;
+}
+.moonToSun-moon-star3{
+    top: 42%;
+    left: 12%;
+
+    opacity: 0.4;
+}
+.moonToSun-moon-star4{
+    top: 69%;
+    left: 82%;
+    
+    opacity: 0.5;
+}
+.moonToSun-moon-star5{
+    top: 82%;
+    left: 25%;
+}
+
+
+/* Sun */
+.moonToSun-inner-sunContainer{
+    background-color: lightblue;
+}
+
+.moonToSun-sun-sunCenter{
+    position: absolute;
+    top:25%;
+    left: 25%;
+
+    width:50%;
+    padding-bottom: 50%;
+
+    border-radius: 50%;
+
+    background-color: orange;
+}
+
+.moonToSun-sun-shine{
+    position: absolute;
+
+    border-right: calc(var(--icon-minDiameter) / 13) solid transparent;
+    border-left: calc(var(--icon-minDiameter) / 13) solid transparent;
+    border-bottom: calc(var(--icon-minDiameter) / 6.5) solid orangered;
+}
+.moonToSun-sun-sunTop{
+    left:calc(50% - calc(var(--icon-minDiameter) / 13));
+    bottom: 80%;
+}
+.moonToSun-sun-sunBottom{
+    left:calc(50% - calc(var(--icon-minDiameter) / 13));
+    top: 80%;
+    transform: rotate(180deg);
+}
+.moonToSun-sun-sunRight{
+    left: 80%;
+    top:calc(50% - calc(var(--icon-minDiameter) / 13));
+    transform: rotate(90deg);
+}
+.moonToSun-sun-sunLeft{
+    right: 80%;
+    top:calc(50% - calc(var(--icon-minDiameter) / 13));
+    transform: rotate(-90deg);
+}
+
+.moonToSun-sun-sunTopLeft{
+    left:calc(20% - calc(var(--icon-minDiameter) / 13));
+    /* bottom: 80%; */
+    bottom: calc(80% - calc(var(--icon-minDiameter) / 13));
+    transform: rotate(-45deg);
+}
+.moonToSun-sun-sunTopRight{
+    left:calc(80% - calc(var(--icon-minDiameter) / 13));
+    bottom: calc(80% - calc(var(--icon-minDiameter) / 13));
+    transform: rotate(45deg);
+}
+.moonToSun-sun-sunBottomLeft{
+    left:calc(20% - calc(var(--icon-minDiameter) / 13));
+    bottom: calc(20% - calc(var(--icon-minDiameter) / 13));
+    transform: rotate(-135deg);
+}
+.moonToSun-sun-sunBottomRight{
+    left:calc(80% - calc(var(--icon-minDiameter) / 13));
+    bottom: calc(20% - calc(var(--icon-minDiameter) / 13));
+    transform: rotate(135deg);
+}
+
+
+
+.moonToSun-inner-moonContainer:hover {
+    opacity: 0;
+}
+

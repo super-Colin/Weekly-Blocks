@@ -1,0 +1,143 @@
+:root {
+    font-size: 16px;
+    
+
+    /* Brand Vars */
+
+    --brand-color-lightShade1: #F2ECE7;
+    /* Light shades
+    Use this color as the background for your dark-on-light designs,
+    or the text color of an inverted design. */
+
+    --brand-color-lightAccent1: #EFAF5E;
+    /* Light accent
+    Accent colors can be used to bring attention to design elements 
+    by contrasting with the rest of the palette. */
+
+    --brand-color-main1: #ED6C25;
+    /* Main brand color
+    This color should be eye-catching but not harsh.
+    It can be liberally applied to your layout as its main identity. */
+
+    --brand-color-darkAccent1: #B9514A;
+    /* Dark accent
+    Another accent color to consider.
+    Not all colors have to be used - sometimes a simple color scheme works best. */
+   
+    --brand-color-darkShade1: #392E42;
+    /* Dark shades
+    Use as the text color for dark-on-light designs, 
+    or as the background for inverted designs. */
+
+
+
+
+    /* Spacing */
+    --global-spacing-smaller: .3rem;
+    --global-spacing-small: .6rem;
+    --global-spacing-medium: 1.2rem;
+    --global-spacing-large: 2rem;
+    --global-spacing-larger: 2.6rem;
+
+
+    /* Colors */
+    --global-color-sucess: #2d2;
+    --global-color-warning: #d62;
+    --global-color-danger: #d22;
+
+    --global-color-white1: #eee;
+    --global-color-lightGray1: #ccc;
+    --global-color-gray1: #888;
+    --global-color-darkGray1: #444;
+    --global-color-black1: #111;
+
+ 
+    /* Fonts */
+    --global-fontSize-title-small: 1.7rem;
+    --global-fontSize-title-medium: 2rem;
+    --global-fontSize-title-large: 2.4rem;
+    --global-fontSize-body-small: .9rem;
+    --global-fontSize-body-medium: 1.1rem;
+    --global-fontSize-body-large: 1.3rem;
+
+}
+body.darkMode-active{
+    /* reverse the dark and light colors */
+    --brand-color-darkAccent1: #EFAF5E;
+    --brand-color-lightAccent1: #B9514A;
+    --brand-color-darkShade1: #F2ECE7;
+    --brand-color-lightShade1: #392E42;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+    transition: background-color 1s;
+}
+body{
+    background-color: var(--darkMode-currentColor-bg);
+    color: var(--darkMode-currentColor-text);
+}
+
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+@media(min-width: 375px) {
+    :root {
+        /* font-size: 16px; */
+
+        --global-spacing-main: 3.75rem;
+        /* 60px */
+    }
+}
+
+@media(min-width: 720px) {
+    :root {
+        --global-spacing-main: 4.375rem;
+
+        --global-fontSize-h1: 2.7rem;
+        --global-fontSize-h2: 2.2rem;
+        --global-fontSize-h3: 1.9rem;
+        --global-fontSize-h4: 1.6rem;
+        --global-fontSize-p: 1.2rem;
+
+    }
+
+
+}
+
+@media(min-width: 1020px) {
+    :root {
+        --global-spacing-main: 5rem;
+
+        --global-fontSize-h1: 2.9rem;
+        --global-fontSize-h2: 2.4rem;
+        --global-fontSize-h3: 1.9rem;
+        --global-fontSize-h4: 1.6rem;
+        --global-fontSize-p: 1.4rem;
+    }
+
+}
+
+@media(min-width: 1320px) {
+    :root {
+        --global-spacing-main: 6.25rem;
+
+        --global-fontSize-h1: 3rem;
+        --global-fontSize-h2: 2.5rem;
+        --global-fontSize-h3: 2rem;
+        --global-fontSize-h4: 1.7rem;
+        --global-fontSize-p: 1.5rem;
+    }
+
+}

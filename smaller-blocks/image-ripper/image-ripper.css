@@ -1,0 +1,67 @@
+
+
+p{
+    margin-bottom: 60px;
+}
+.hidden{
+    display: none;
+}
+.ripper-wrapper{
+    /* padding: 100px; */
+    position: relative;
+}
+.ripper-inner{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    max-width: 100%;
+    color: white;
+    z-index: 1;
+    border-radius: 60px;
+}
+.ripper-bg {
+    top: 0;
+    left: 0;
+    position: absolute;
+    overflow: hidden;
+    max-width: 100%;
+    z-index: 2;
+    /* padding: 100px; */
+}
+.ripper-content{
+    padding: 100px;
+    /* background-color: rgba(100, 100, 100, .7); */
+    background-image: linear-gradient(to bottom, rgba(100, 100, 100, .8) 30%, rgba(100, 100, 100, .5) );
+    /* background-image: linear-gradient(to right, white 10%, rgba(100, 100, 100, .5) 60%); */
+    position: relative; 
+    z-index: 9;
+}
+
+.image-ripped {
+    display: block;
+    position: relative;
+    background-image: url('./demo-image.jpg');
+    background-attachment: fixed;
+    height: 80px;
+    width: 5000px;
+}
+.ripper-inner-2 .image-ripped{
+    background-image: url('./color.jpg');
+}
+.image-ripped.k {
+    background-image: url('./demo-image.jpg');
+}
+
+/* img */
+/* .image-ripped {
+    display: block;
+    position: relative;
+    background-image: url('./demo-image.jpg');
+    background-repeat: no-repeat;
+    background-size: 100px 200px;
+    height: 100px;
+} */
+
+
+

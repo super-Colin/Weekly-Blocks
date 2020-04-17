@@ -1,0 +1,42 @@
+:root{
+    --scroll-progress-bar__height: 10px;
+    --header-height: 150px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    margin-top:var(--header-height);
+}
+
+header{
+    width: 100%;
+    background-color: orangered;
+    height: var(--header-height);
+    position: fixed;
+    top: 0;
+}
+
+
+.scroll-progress-wrapper{
+    height: var(--scroll-progress-bar__height);
+    width: 100%;
+    position: absolute;
+    bottom: calc( var(--scroll-progress-bar__height) * -1);
+    left: 0;
+}
+.scroll-progress-bar{
+    width: 0;
+    height: var(--scroll-progress-bar__height);
+    background-color: orange;
+    border-radius: 0 0 var(--scroll-progress-bar__height) var(--scroll-progress-bar__height);
+    /* border-radius: 5px; */
+}
+
+.filler{
+    padding: 500px 100px;
+    margin: 50px;
+    background-color: palegreen;
+}

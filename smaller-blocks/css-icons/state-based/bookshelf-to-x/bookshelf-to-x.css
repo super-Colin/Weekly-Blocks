@@ -1,0 +1,81 @@
+
+
+.bookshelfToX-icon-container{
+    --icon-minDiameter: 60px;
+    --icon-diameter: 10vw;
+    --icon-maxDiameter: 75px;
+
+    --icon-bgColor: black;
+    --icon-shelfColor: orange;
+
+    
+    --bookshelf-offset: 20%;
+    --bookshelf-width: 75%;
+    --bookshelf-height: 10%;
+
+    --transition-duration: 0.5s;
+
+    min-width: var(--icon-minDiameter);
+    width: var(--icon-diameter);
+    max-width: var(--icon-maxDiameter);
+}
+
+.bookshelfToX-icon-innerContainer{
+    position: relative;
+
+    width: 100%;
+    padding-bottom: 100%;
+
+    border-radius: 50%;
+    background-color: var(--icon-bgColor);
+
+    overflow: hidden;
+}
+.bookshelfToX-icon-topShelf,
+.bookshelfToX-icon-middleShelf,
+.bookshelfToX-icon-bottomShelf{
+    display: block;
+    width: var(--bookshelf-width);
+    height: var(--bookshelf-height);
+
+    position: absolute;
+    top: var(--bookshelf-offset);
+    left: calc(calc(100% - var(--bookshelf-width)) / 2);
+
+    border-radius: 4px;
+    background-color:var(--icon-shelfColor);
+    transition: all var(--transition-duration);
+    transform-origin: center;
+}
+.bookshelfToX-icon-middleShelf{
+    top: calc(50% - calc(var(--bookshelf-height) / 2));
+    opacity: 1;
+}
+.bookshelfToX-icon-bottomShelf{
+    top: unset;
+    bottom: var(--bookshelf-offset);
+}
+
+
+/*
+Active State 
+
+Delete on hover line if needed, 
+Add class "bookshelfToX-icon-active" to container element to switch states
+*/
+
+.bookshelfToX-icon-container:hover .bookshelfToX-icon-topShelf,
+.bookshelfToX-icon-active .bookshelfToX-icon-topShelf{
+    top: calc(50% - calc(var(--bookshelf-height) / 2));
+    transform: rotate(45deg);
+}
+.bookshelfToX-icon-container:hover .bookshelfToX-icon-middleShelf,
+.bookshelfToX-icon-active .bookshelfToX-icon-middleShelf{
+    opacity: 0;
+}
+.bookshelfToX-icon-container:hover .bookshelfToX-icon-bottomShelf,
+.bookshelfToX-icon-active .bookshelfToX-icon-bottomShelf{
+    bottom: calc(50% - calc(var(--bookshelf-height) / 2));
+    transform: rotate(-45deg);
+}
+
