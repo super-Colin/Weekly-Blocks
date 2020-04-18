@@ -1,0 +1,46 @@
+@import '../global-vars.css';
+
+.wordTree-container{
+    --wordTree-color-bg: purple;
+    --wordTree-color-main: var(--brand-color-main1);
+
+    --wordTree-font-largestSize: 5rem;
+
+    width: 100%;
+    height: 100vh;
+}
+.wordTree-disposableContainer{
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+}
+
+.wordTree-words-tier1,
+.wordTree-words-tier2,
+.wordTree-words-tier3,
+.wordTree-words-tier4{
+    display: block;
+    position: absolute;
+
+    color: var(--wordTree-color-main);
+    text-transform: capitalize;
+}
+
+.wordTree-words-tier1{
+    font-size: var(--wordTree-font-largestSize);
+}
+.wordTree-words-tier2{
+    filter: hue-rotate(20deg);
+    font-size: calc(var(--wordTree-font-largestSize) * .75 );
+}
+.wordTree-words-tier3{
+    filter: hue-rotate(40deg);
+    font-size: calc(var(--wordTree-font-largestSize) * .5);
+}
+.wordTree-words-tier4{
+    filter: hue-rotate(60deg);
+    font-size: calc(var(--wordTree-font-largestSize) * .25);
+}
+
+
