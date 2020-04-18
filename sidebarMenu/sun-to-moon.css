@@ -1,7 +1,6 @@
 @import '../global-vars.css';
 
 .moonToSun-icon-container{
-    --icon-diameter: var(--sidebar-icons-minDiameter);
     --icon-diameter: var(--sidebar-icons-diameter);
     --icon-maxDiameter: var(--sidebar-icons-maxDiameter);
 
@@ -17,7 +16,6 @@
     --sun-color-bg: var(--brand-color-darkShade1);
 
 
-    /* min-width: var(--icon-diameter); */
     width: var(--icon-diameter);
     max-width: var(--icon-maxDiameter);
 }

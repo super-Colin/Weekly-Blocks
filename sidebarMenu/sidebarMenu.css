@@ -120,6 +120,7 @@ justify-content: space-between;
     padding-bottom: var(--sidebar-containerTabs-padding-vertical);
 }
 
+
 .sidebarMenu-iconsTab-toggleTabButton,
 .sidebarMenu-iconsTab-darkModeButton{
     width:var(--sidebar-icons-diameter);
@@ -134,7 +135,9 @@ justify-content: space-between;
     background-color: var(--brand-color-lightAccent1);
     background-image: linear-gradient(to bottom, var(--brand-color-lightAccent1), var(--brand-color-darkAccent1));
 }
-.sidebarMenu-iconsTab-darkModeButton{padding: 0;}
+.sidebarMenu-iconsTab-darkModeButton{
+    padding: 0;
+}
 
 .sidebarMenu-iconsTab-toggleTabButton{
 }

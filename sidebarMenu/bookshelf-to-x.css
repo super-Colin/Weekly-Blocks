@@ -1,0 +1,80 @@
+@import '../global-vars.css';
+
+.bookshelfToX-icon-container{
+    --icon-diameter:var(--sidebar-icons-diameter);
+    --icon-maxDiameter: var(--sidebar-icons-maxDiameter);
+
+    --transition-duration: var(--global-timing-transition-duration);
+
+    --icon-bgColor: var(--brand-color-darkShade1);
+    --icon-shelfColor: var(--brand-color-main1);
+
+    
+    --bookshelf-offset: 20%;
+    --bookshelf-width: 65%;
+    --bookshelf-height: 10%;
+
+
+    width: var(--icon-diameter);
+    max-width: var(--icon-maxDiameter);
+}
+
+.bookshelfToX-icon-innerContainer{
+    position: relative;
+
+    width: 100%;
+    padding-bottom: 100%;
+
+    border-radius: 50%;
+    background-color: var(--icon-bgColor);
+
+    overflow: hidden;
+}
+.bookshelfToX-icon-topShelf,
+.bookshelfToX-icon-middleShelf,
+.bookshelfToX-icon-bottomShelf{
+    display: block;
+    width: var(--bookshelf-width);
+    height: var(--bookshelf-height);
+
+    position: absolute;
+    top: var(--bookshelf-offset);
+    left: calc(calc(100% - var(--bookshelf-width)) / 2);
+
+    border-radius: 4px;
+    background-color:var(--icon-shelfColor);
+    transition: all var(--transition-duration);
+    transform-origin: center;
+}
+.bookshelfToX-icon-middleShelf{
+    top: calc(50% - calc(var(--bookshelf-height) / 2));
+    opacity: 1;
+}
+.bookshelfToX-icon-bottomShelf{
+    top: unset;
+    bottom: var(--bookshelf-offset);
+}
+
+
+/*
+Active State 
+
+Delete on hover line if needed, 
+Add class "bookshelfToX-icon-active" to container element to switch states
+*/
+
+/* .bookshelfToX-icon-container:hover .bookshelfToX-icon-topShelf, */
+.bookshelfToX-icon-active .bookshelfToX-icon-topShelf{
+    top: calc(50% - calc(var(--bookshelf-height) / 2));
+    transform: rotate(45deg);
+}
+/* .bookshelfToX-icon-container:hover .bookshelfToX-icon-middleShelf, */
+.bookshelfToX-icon-active .bookshelfToX-icon-middleShelf{
+    opacity: 0;
+}
+/* .bookshelfToX-icon-container:hover .bookshelfToX-icon-bottomShelf, */
+.bookshelfToX-icon-active .bookshelfToX-icon-bottomShelf{
+    bottom: calc(50% - calc(var(--bookshelf-height) / 2));
+    transform: rotate(-45deg);
+}
+
