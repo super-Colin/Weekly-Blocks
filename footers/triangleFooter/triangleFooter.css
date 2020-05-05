@@ -7,10 +7,12 @@
     --rightTriangle-Color: var(--brand-color-main);
     --leftTriangle-topOffset: calc(100vw * 0.123);
 
+    --triangleAngle: 15deg;
+
 
     position: relative;
 
-    padding-top:var(--leftTriangle-topOffset);
+    /* padding-top:var(--leftTriangle-topOffset); */
 }
 
 
@@ -34,7 +36,7 @@
     z-index: 19;
     /* top:var(--leftTriangle-topOffset); */
     top: 0;
-    transform:rotate(7deg);
+    transform:rotate(var(--triangleAngle));
 
     width: 120%;
     height: 50vw;
