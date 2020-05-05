@@ -12,13 +12,13 @@ generate_wordTree();
 
 function generate_wordTree(){
     // Main word, the trunk sprouts from this
-    let mainWord = 'Unique';
+    let mainWord = 'Website';
     // Trunk of the tree
-    let secondWords = ['Determined'];
+    let secondWords = ['Accessibility'];
     // Branches from the trunk
-    let thirdWords = ['Motivated', 'Another'];
+    let thirdWords = ['Awareness', 'Sharing'];
     // Leaves off of the branches
-    let fourthWords = ['Motivated', 'Another', 'More'];
+    let fourthWords = ['Engagement', 'Presence', 'Another'];
 
     // create and append disposable container to outer container
     wordTree_disposableContainer = document.createElement('div');
@@ -62,14 +62,14 @@ function addWords(wordTier, elemContent, elemParent = wordTree_disposableContain
 
 
 function getWordSpot(elem, branchTier, branchNumber) {
-    
-    let randomInt = Math.random() / 2 + 0.3;
-    console.log('random int is: ' + randomInt);
+
+    let randomInt = Math.random() * 0.7 + 0.2;
+    console.log('random int is: ' + randomInt); 
 
     // Place and rotate the trunk of the tree
     if( branchTier === 2 && branchNumber === 1 ){
         // Center trunk on top of main word
-        elem.style.left = wordTree_mainWordSpan.offsetLeft + (wordTree_mainWordSpan.offsetLeft / 2) + 'px';
+        elem.style.left = wordTree_mainWordSpan.offsetLeft + ((wordTree_mainWordSpan.offsetWidth / 2) + (elem.offsetHeight / 2)) + 'px';
         elem.style.top = (wordTree_mainWordSpan.offsetTop - elem.offsetHeight) + 'px';
 
         // Set transform origin 

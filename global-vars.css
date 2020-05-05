@@ -90,7 +90,7 @@ body.darkMode-active {
     padding: 0;
     margin: 0;
     font-family: inherit;
-    transition: background-color var(--global-timing-transition-duration);
+    /* transition: background-color var(--global-timing-transition-duration); */
 }
 body{
     background-color: var(--brand-color-lightShade1);
