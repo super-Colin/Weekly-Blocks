@@ -4,26 +4,36 @@
 .triangleFooter-container{
     --leftTriangle-Color: var(--brand-color-lightShade1-constant);
     --leftTriangle-BgColor: #000;
-    --rightTriangle-Color: var(--brand-color-main);
-    --leftTriangle-topOffset: calc(100vw * 0.123);
 
     --triangleAngle: 15deg;
+    /* --leftTriangle-topOffset: set in JS, based on above angle; */
 
+    --rightTriangle-BgColor: #830;
+    --rightTriangle-Color: var(--brand-color-main);
+
+    --centerExpandable-BgColor: #888;
+    --centerExpandable-fontSize: 1.5em;
+
+    --centerExpandable-topOffset: calc(calc(var(--leftTriangle-topOffset) / 5) - var(--centerExpandable-fontSize));
+
+    --triangleFooter-transitionDuration: 1s;
+
+    
+    /* --centerExpandable-topOffset: calc(var(--leftTriangle-topOffset) - --centerExpandable-fontSize); */
 
     position: relative;
 
     /* padding-top:var(--leftTriangle-topOffset); */
+    /* overflow: hidden; */
 }
 
-
-
+.triangleFooter-angledBlock-overflowContainer,
 .triangleFooter-leftTriangle-angledBlock,
 .triangleFooter-rightTriangle-angledBlock{
     position: absolute;
     top: 0;
     right:0;
     transform-origin: 100% 0%;
-
 }
 
 .triangleFooter-leftTriangle-container{
@@ -33,40 +43,67 @@
 }
 
 .triangleFooter-leftTriangle-angledBlock{
-    z-index: 19;
-    /* top:var(--leftTriangle-topOffset); */
-    top: 0;
+    z-index: 17;
+    top:var(--leftTriangle-topOffset);
+    /* top: 0; */
     transform:rotate(var(--triangleAngle));
 
     width: 120%;
-    height: 50vw;
+    height: 50vh;
 
     background-color: var(--leftTriangle-BgColor);
 }
 
-.triangleFooter-leftTriangle-content{
+.triangleFooter-leftTriangle-triangleContent{
     position: relative;
     z-index: 20;
-    /* top: var(--leftTriangle-topOffset); */
-    top: 0;
+    width: 50%;
+    height: calc(var(--leftTriangle-topOffset) / 2);
+    top: calc(var(--leftTriangle-topOffset) / 2);
+    /* top: 0; */
     background-color: red;
 }
+.triangleFooter-leftTriangle-rectangleContent{
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    /* background-color: aqua; */
+    background-color: var(--leftTriangle-BgColor);
+    z-index: 18;
+    right: 0;
+    top: var(--leftTriangle-topOffset);
+}
+
+
+
+
 
 
 .triangleFooter-rightTriangle-container{
     position: absolute;
     right: 0;
-    top: 0;
+    top: calc(calc(var(--leftTriangle-topOffset) * 0.25) * -1);
+
+    width: 140%;
+}
+
+.triangleFooter-angledBlock-overflowContainer{
+    width: 100%;
+    height: 30px;
+    padding-top: calc(var(--leftTriangle-topOffset) * 1.5);
+    overflow: hidden;
 }
 
 .triangleFooter-rightTriangle-angledBlock{
+    display: block;
+
     z-index: 14;
-    transform:rotate(-12deg);
+    transform:rotate(calc(calc(var(--triangleAngle) * 1.75) * -1));
 
     width: 100%;
-    height: 100px;
+    height: 100vh;
 
-    background-color: cornflowerblue;
+    background-color: var(--rightTriangle-BgColor);
 
 }
 
@@ -75,16 +112,92 @@
 }
 
 
+
+/* Expandable Container */
+
 .triangleFooter-centerExpandable-container{
     position: absolute;
-    top: calc(var(--leftTriangle-topOffset) / 4);
+    top: var(--centerExpandable-topOffset);
     left: 0;
     right: 0;
     z-index: 11;
 
+    /* height: 200px; */
+    width: 100%;
+    padding-bottom: 10vh;
+
+    
+    background-color: var(--centerExpandable-BgColor);
+    transition: top var(--triangleFooter-transitionDuration);
+}
+
+.triangleFooter-centerExpandable-expandedBg{
+    position: absolute;
+    top: var(--centerExpandable-topOffset);
+    left: 0;
+    right: 0;
+    z-index: 6;
+
     height: 200px;
     width: 100%;
-    
-    background-color: #888;
+
+    background-color: var(--rightTriangle-BgColor);
+    filter: brightness(0.85);
+}
+
+.triangleFooter-centerExpandable-title{
+    font-size: var(--centerExpandable-fontSize);
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+.triangleFooter-centerExpandable-content{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
 
 }
+
+.triangleFooter-centerExpandable-topFlair{
+    position: absolute;
+    bottom: 100%;
+    
+    width: 0;
+    height: 0;
+    left: calc(50% - 7vw);
+    right: calc(50% - 7vw);
+
+    cursor: pointer;
+
+    border-left: 7vw solid transparent;
+    border-right: 7vw solid transparent;
+    border-bottom: 2.7vw solid var(--centerExpandable-BgColor);
+    filter: brightness(0.8);
+
+    transition: border var(--triangleFooter-transitionDuration);
+}
+.triangleFooter-centerExpandable-topFlair.topFlairExpanded{
+    border-top: 2.7vw solid var(--centerExpandable-BgColor);
+    border-bottom: 0;
+}
+.triangleFooter-centerExpandable-bottomFlair{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 7;
+
+    height: 50%;
+    width: 50%;
+
+    transform-origin: left bottom;
+    /* transform: rotate(calc(var(--triangleAngle) * -1)); */
+    transform: rotate(var(--triangleAngle));
+
+    background-color: var(--centerExpandable-BgColor);
+    filter: brightness(0.85);
+
+}
+
+
+

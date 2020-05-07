@@ -65,8 +65,43 @@ function setTriangleFooterPadding(footerElemId, angleElemId) {
 
     let offset = getOpposite(footerWidth, angle)
 
-    footer.style.paddingTop = offset + 'px';
+    // footer.style.paddingTop = offset + 'px';
+    footer.style.setProperty('--leftTriangle-topOffset', offset + 'px');
 }
 
-setTriangleFooterPadding('triangleFooter-container', 'triangleFooter-leftTriangle-angledBlock');
+// setTriangleFooterPadding('triangleFooter-container', 'triangleFooter-leftTriangle-angledBlock');
+
+function leftAngleResizeEvent(){
+    setTriangleFooterPadding('triangleFooter-container', 'triangleFooter-leftTriangle-angledBlock');
+}
+
+// Call for the first time and watch for resizes
+leftAngleResizeEvent();
+window.addEventListener('resize', leftAngleResizeEvent);
+
+
+
+// Expandable 
+
+
+// 'triangleFooter-centerExpandable-title'
+function toggleCenterExpandable(){
+    let centerExpandable = document.getElementById('triangleFooter-centerExpandable-container');
+    let topShouldBe = (Math.floor(centerExpandable.offsetHeight * -1) + 35) + 'px';
+
+
+    if (centerExpandable.style.top === topShouldBe 
+    // found a bug and added these
+    || parseInt(centerExpandable.style.top) === parseInt(topShouldBe) + 1
+    || parseInt(centerExpandable.style.top) === parseInt(topShouldBe) - 1) {
+
+        centerExpandable.style.top = null;
+        document.getElementById('triangleFooter-centerExpandable-topFlair').classList.toggle('topFlairExpanded');
+    } else{
+        document.getElementById('triangleFooter-centerExpandable-topFlair').classList.toggle('topFlairExpanded');
+        centerExpandable.style.top = topShouldBe;
+    }
+}
+document.getElementById('triangleFooter-centerExpandable-title').addEventListener('click', toggleCenterExpandable);
+document.getElementById('triangleFooter-centerExpandable-topFlair').addEventListener('click', toggleCenterExpandable);
 

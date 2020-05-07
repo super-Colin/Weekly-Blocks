@@ -8,54 +8,67 @@
     <link rel="stylesheet" href="./triangleFooter.css">
 </head>
 <body>
-    
-    <div style="height: 120vh; width: 200px; background-color: blue;"></div>
-
+    <div style="display: flexbox; justify-content: center; width: 100%;">
+        <div style="height: 120vh; width: 200px; background-color: blue;"></div>
+    </div>
 <footer>
 
     <div class="triangleFooter-container" id="triangleFooter-container">
 
         <div class="triangleFooter-leftTriangle-container">
 
-            <div class="triangleFooter-leftTriangle-angledBlock" id="triangleFooter-leftTriangle-angledBlock"></div>
+            <div class="triangleFooter-angledBlock-overflowContainer">
+                <div class="triangleFooter-leftTriangle-angledBlock" id="triangleFooter-leftTriangle-angledBlock"></div>
+            </div>
+    
 
-            <div class="triangleFooter-leftTriangle-content">
+            <div class="triangleFooter-leftTriangle-triangleContent">
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ullam veritatis magnam exercitationem dicta corrupti earum soluta vitae culpa, laudantium quasi. Alias maiores eveniet debitis eum quam inventore, nam provident!
                 </p>
             </div>
 
+            <div class="triangleFooter-leftTriangle-rectangleContent">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit porro voluptatibus harum laboriosam quos quia mollitia deleniti molestiae, adipisci nulla dicta. Odit animi quibusdam quod qui illo sunt distinctio quas!
+                </p>
+            </div>
         </div>
 
-        <div class="triangleFooter-centerExpandable-container">
+
+        <div class="triangleFooter-rightTriangle-container">
+
+            <div class="triangleFooter-angledBlock-overflowContainer">
+                <div class="triangleFooter-rightTriangle-angledBlock"></div>
+            </div>
+
+            <div class="triangleFooter-rightTriangle-content">
+                <!-- <p style="color: transparent;">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci ut iure accusamus odio laborum? Error autem non officia maxime repudiandae distinctio perspiciatis quibusdam ipsa ducimus, blanditiis neque omnis doloribus ullam.
+                </p> -->
+            </div>
+
+        </div>
+
+        <div class="triangleFooter-centerExpandable-container" id="triangleFooter-centerExpandable-container">
+
+            <div class="triangleFooter-centerExpandable-topFlair" id="triangleFooter-centerExpandable-topFlair"></div>
+
 
             <div class="triangleFooter-centerExpandable-content">
-                <span>Contact</span>
+                <span class="triangleFooter-centerExpandable-title" id="triangleFooter-centerExpandable-title">Contact</span>
 
                 <div class="triangleFooter-centerExpandable-form">
 
                 </div>
             </div>
 
+            <!-- <div class="triangleFooter-centerExpandable-bottomFlair"></div> -->
         </div>
+        <div class="triangleFooter-centerExpandable-expandedBg"></div>
 
 
-
-        <div class="triangleFooter-rightTriangle-container">
-
-            <div class="triangleFooter-rightTriangle-angledBlock"></div>
-
-            <div class="triangleFooter-rightTriangle-content">
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci ut iure accusamus odio laborum? Error autem non officia maxime repudiandae distinctio perspiciatis quibusdam ipsa ducimus, blanditiis neque omnis doloribus ullam.
-
-                </p>
-            </div>
-
-        </div>
-
-
-
+            <!-- <div class="triangleFooter-leftTriangle-bottomFiller"></div> -->
 
     </div>
 
