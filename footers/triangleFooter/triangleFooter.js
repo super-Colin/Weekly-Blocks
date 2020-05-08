@@ -87,7 +87,8 @@ window.addEventListener('resize', leftAngleResizeEvent);
 // 'triangleFooter-centerExpandable-title'
 function toggleCenterExpandable(){
     let centerExpandable = document.getElementById('triangleFooter-centerExpandable-container');
-    let topShouldBe = (Math.floor(centerExpandable.offsetHeight * -1) + 35) + 'px';
+    let topShouldBe = Math.floor((centerExpandable.offsetHeight * -1) * 0.85) + 'px';
+    // let topShouldBe = Math.floor(centerExpandable.offsetHeight * -1) + 'px';
 
 
     if (centerExpandable.style.top === topShouldBe 
