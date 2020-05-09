@@ -13,6 +13,9 @@ body.darkMode-active {
 
     /* Brand Vars */
 
+    /* ===--- Colors ---=== */
+    /* Colors have a constant for dark mode compatibility */
+
     --brand-color-lightShade1-constant: #F2ECE7;
     --brand-color-lightShade1: #F2ECE7;
     /* Light shades
@@ -42,6 +45,10 @@ body.darkMode-active {
     /* Dark shades
     Use as the text color for dark-on-light designs, 
     or as the background for inverted designs. */
+
+
+
+    /* ===--- Globals ---=== */
 
 
     /* Timing */
@@ -102,7 +109,7 @@ body{
 } */
 
 a {
-    text-decoration: none;
+    /* text-decoration: none; */
 }
 
 li {

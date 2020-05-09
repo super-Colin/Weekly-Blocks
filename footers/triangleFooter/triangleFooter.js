@@ -62,6 +62,7 @@ function setTriangleFooterPadding(footerElemId, angleElemId) {
     let footerWidth = getWidth(footerElemId);
 
     let angle = getAngle(angleElemId);
+    console.log(angle);
 
     let offset = getOpposite(footerWidth, angle)
 
@@ -88,21 +89,31 @@ window.addEventListener('resize', leftAngleResizeEvent);
 function toggleCenterExpandable(){
     let centerExpandable = document.getElementById('triangleFooter-centerExpandable-container');
     let topShouldBe = Math.floor((centerExpandable.offsetHeight * -1) * 0.85) + 'px';
-    // let topShouldBe = Math.floor(centerExpandable.offsetHeight * -1) + 'px';
+
+    console.log(topShouldBe);
 
 
-    if (centerExpandable.style.top === topShouldBe 
-    // found a bug and added these
-    || parseInt(centerExpandable.style.top) === parseInt(topShouldBe) + 1
-    || parseInt(centerExpandable.style.top) === parseInt(topShouldBe) - 1) {
+    if (centerExpandable.classList.contains('triangleFooter-centerExpandable-active')) {
 
         centerExpandable.style.top = null;
+
         document.getElementById('triangleFooter-centerExpandable-topFlair').classList.toggle('topFlairExpanded');
+        centerExpandable.classList.toggle('triangleFooter-centerExpandable-active');
+
+        console.log('if trigger');
+
     } else{
+
         document.getElementById('triangleFooter-centerExpandable-topFlair').classList.toggle('topFlairExpanded');
+        
         centerExpandable.style.top = topShouldBe;
+        centerExpandable.classList.toggle('triangleFooter-centerExpandable-active');
+                console.log('else trigger');
+
     }
+
 }
+
 document.getElementById('triangleFooter-centerExpandable-title').addEventListener('click', toggleCenterExpandable);
 document.getElementById('triangleFooter-centerExpandable-topFlair').addEventListener('click', toggleCenterExpandable);
 
