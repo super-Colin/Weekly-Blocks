@@ -2,7 +2,6 @@
 // This is all related to finding the vertical offset
 // at the point it goes off the screen
 
-// console.log(Math.tan(7));
 
 // Thanks to CSS Tricks for this one
 // https://css-tricks.com/get-value-of-css-rotation-through-javascript/
@@ -53,9 +52,7 @@ function getOpposite( adjacent, degreeAngle){
     let slopePercent = Math.tan(radians);
     console.log(adjacent, slopePercent)
     return adjacent * slopePercent;
-    // return (Math.tan(angle) * 100) * adjacent;
 }
-
 
 function setTriangleFooterPadding(footerElemId, angleElemId) {
     let footer = document.getElementById(footerElemId);
@@ -66,14 +63,12 @@ function setTriangleFooterPadding(footerElemId, angleElemId) {
 
     let offset = getOpposite(footerWidth, angle)
 
-    // footer.style.paddingTop = offset + 'px';
     footer.style.setProperty('--leftTriangle-topOffset', offset + 'px');
 }
 
-// setTriangleFooterPadding('triangleFooter-container', 'triangleFooter-leftTriangle-angledBlock');
-
 function leftAngleResizeEvent(){
-    setTriangleFooterPadding('triangleFooter-container', 'triangleFooter-leftTriangle-angledBlock');
+    setTimeout(setTriangleFooterPadding('triangleFooter-container', 'triangleFooter-leftTriangle-angledBlock'), 10);
+    // setTriangleFooterPadding('triangleFooter-container', 'triangleFooter-leftTriangle-angledBlock');
 }
 
 // Call for the first time and watch for resizes
@@ -82,16 +77,12 @@ window.addEventListener('resize', leftAngleResizeEvent);
 
 
 
+
 // Expandable 
 
-
-// 'triangleFooter-centerExpandable-title'
 function toggleCenterExpandable(){
     let centerExpandable = document.getElementById('triangleFooter-centerExpandable-container');
     let topShouldBe = Math.floor((centerExpandable.offsetHeight * -1) * 0.85) + 'px';
-
-    console.log(topShouldBe);
-
 
     if (centerExpandable.classList.contains('triangleFooter-centerExpandable-active')) {
 
@@ -108,12 +99,13 @@ function toggleCenterExpandable(){
         
         centerExpandable.style.top = topShouldBe;
         centerExpandable.classList.toggle('triangleFooter-centerExpandable-active');
-                console.log('else trigger');
+
 
     }
 
 }
 
+// listen for clicks on the "Contact" word as well as the arrow above it
 document.getElementById('triangleFooter-centerExpandable-title').addEventListener('click', toggleCenterExpandable);
 document.getElementById('triangleFooter-centerExpandable-topFlair').addEventListener('click', toggleCenterExpandable);
 
