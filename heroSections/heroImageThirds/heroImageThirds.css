@@ -1,0 +1,88 @@
+@import "../../global-vars.css";
+
+
+
+.heroImageThirds-container{
+
+
+    height: 100vh;
+    max-height: 100vh;
+}
+
+
+
+.heroImageThirds-imagesContainer{
+    display: flex;
+
+
+    max-height: 100%;
+}
+
+.heroImageThirds-third-container,
+.heroImageThirds-third-container img{
+    height: 100vh;
+    max-height: 100vh;
+}
+.heroImageThirds-third-container{
+    position: relative;
+
+    width: calc(100% / 3);
+}
+
+
+.heroImageThirds-third-container img{
+    width: 100%;
+
+    object-fit: cover;
+}
+
+.heroImageThirds-firstThird-container img{
+    object-position: left;
+}
+.heroImageThirds-secondThird-container img{
+    object-position: center;
+}
+.heroImageThirds-thirdThird-container img{
+    object-position: right;
+}
+
+.heroImageThirds-firstThird-container .heroImageThirds-content-container{
+    background-color: rgba(80, 180, 50, 0.4);
+}
+.heroImageThirds-firstThird-container:hover .heroImageThirds-content-container{
+    background-color: rgba(80, 180, 50, 0);
+}
+
+.heroImageThirds-secondThird-container .heroImageThirds-content-container{
+    background-color: rgba(180, 40, 50, 0.4);
+}
+.heroImageThirds-secondThird-container:hover .heroImageThirds-content-container {
+    background-color: rgba(180, 40, 50, 0);
+}
+
+.heroImageThirds-thirdThird-container .heroImageThirds-content-container{
+    background-color: rgba(80, 80, 150, 0.4);
+}
+.heroImageThirds-thirdThird-container:hover .heroImageThirds-content-container {
+    background-color: rgba(80, 80, 150, 0);
+}
+
+
+.heroImageThirds-content-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    transition-duration: 1s;
+}
+
+
+.heroImageThirds-firstThird-container {
+    max-height: 100%;
+}
