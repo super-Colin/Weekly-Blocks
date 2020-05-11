@@ -66,14 +66,38 @@ function setTriangleFooterPadding(footerElemId, angleElemId) {
     footer.style.setProperty('--leftTriangle-topOffset', offset + 'px');
 }
 
+
+
+
+
+
+// The Meat
+
+
+// To wait a small moment for the resizing to be done before running the actual function
+// https://alvarotrigo.com/blog/firing-resize-event-only-once-when-resizing-is-finished/
+let idForDoneResizingTimeout;
+
+
 function leftAngleResizeEvent(){
-    setTimeout(setTriangleFooterPadding('triangleFooter-container', 'triangleFooter-leftTriangle-angledBlock'), 10);
     // setTriangleFooterPadding('triangleFooter-container', 'triangleFooter-leftTriangle-angledBlock');
+
+    clearTimeout(idForDoneResizingTimeout);
+    idForDoneResizingTimeout = setTimeout(doneResizing, 700);
+}
+function doneResizing(){
+    setTriangleFooterPadding('triangleFooter-container', 'triangleFooter-leftTriangle-angledBlock');
 }
 
 // Call for the first time and watch for resizes
-leftAngleResizeEvent();
+// leftAngleResizeEvent();
+doneResizing();
 window.addEventListener('resize', leftAngleResizeEvent);
+
+
+
+
+
 
 
 
@@ -99,8 +123,6 @@ function toggleCenterExpandable(){
         
         centerExpandable.style.top = topShouldBe;
         centerExpandable.classList.toggle('triangleFooter-centerExpandable-active');
-
-
     }
 
 }

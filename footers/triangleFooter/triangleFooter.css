@@ -4,8 +4,8 @@
 .triangleFooter-container{
 
     --triangleAngle: 21deg;
-    --triangleSlopePercent: 0.383;
-    --leftTriangle-topOffset: calc(100% * var(--triangleSlopePercent));
+    /* --triangleSlopePercent: 0.383; */
+    /* --leftTriangle-topOffset: calc(100% * var(--triangleSlopePercent)); */
 
     --triangleFooter-transitionDuration: var(--global-timing-transition-duration);
 
@@ -39,7 +39,7 @@
 .triangleFooter-leftTriangle-angledBlock,
 .triangleFooter-rightTriangle-angledBlock{
     position: absolute;
-    top: 2px;
+    top: 0px;
     right:0;
     transform-origin: 100% 0%;
 
@@ -55,14 +55,12 @@
 .triangleFooter-leftTriangleAngle-overflowContainer {
     width: 100%;
     height: 30px;
-    /* padding-top: calc(var(--leftTriangle-topOffset) * 1.5); */
     padding-top: var(--leftTriangle-topOffset);
     overflow: hidden;
 }
 .triangleFooter-leftTriangle-angledBlock{
     z-index: 17;
     top:var(--leftTriangle-topOffset);
-    /* top: 0; */
     transform:rotate(var(--triangleAngle));
 
     width: 120%;
@@ -85,8 +83,6 @@
 
     text-align: center;
     font-size: 1.8em;
-
-    /* margin-bottom: var(--triangleFooter-side-padding); */
 }
 .triangleFooter-leftTriangle-rectangleContent{
     display: flex;
@@ -101,10 +97,7 @@
     width: 100%;
     min-height: 100px;
     background-color: var(--leftTriangle-bgColor);
-    /* padding: 0 var(--triangleFooter-side-padding) var(--triangleFooter-side-padding); */
     padding: calc(var(--triangleFooter-side-padding) * 2) var(--triangleFooter-side-padding) var(--triangleFooter-side-padding);
-    
-
 }
 .triangleFooter-leftTriangle-rectangleContent-pagesContainer{  
     display: flex;
@@ -141,9 +134,7 @@
 }
 
 .triangleFooter-leftTriangle-rectangleContent-tickerContainer span:first-of-type{
-    /* padding: 0 calc(var(--triangleFooter-side-padding) / 4); */
     padding-right: calc(var(--triangleFooter-side-padding) / 4);
-    /* font-size: 0.9em; */
 }
 
 
@@ -161,7 +152,6 @@
     width: 100%;
     height: 30px;
     padding-top: calc(var(--leftTriangle-topOffset) * 1.35);
-    /* padding-top: var(--leftTriangle-topOffset); */
     overflow: hidden;
 }
 
@@ -308,7 +298,7 @@
 .triangleFooter-centerExpandable-form-contactInfoWrapper  input,
 .triangleFooter-centerExpandable-form-messageWrapper  textarea {
     width: 100%;
-    font-size: 1em;
+    font-size: 0.8em;
 }
 .triangleFooter-centerExpandable-form-contactInfoWrapper div:first-of-type{
     margin-bottom: var(--triangleFooter-side-padding);
@@ -354,6 +344,11 @@
     .triangleFooter-centerExpandable-form-messageWrapper {
         width: 50%;
         margin-bottom: 0;
+    }
+
+    .triangleFooter-centerExpandable-form-contactInfoWrapper input,
+    .triangleFooter-centerExpandable-form-messageWrapper textarea {
+        /* font-size: 1em; */
     }
 
     .triangleFooter-centerExpandable-form-messageWrapper textarea{
