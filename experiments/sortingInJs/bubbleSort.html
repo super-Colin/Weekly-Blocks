@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Sort</title>
+</head>
+<body>
+
+
+    <script>
+
+        // let arrayToSort = [2, 23, 5, 11, 24, 92, 17, 84, 02, 8, 48, 28, 83, 53, 82, 74];
+        let arrayToSort = [2, 23, 5, 22, 2, 7, 17, 15, 12];
+
+        function bubbleSort(array){
+
+            let mutableArray = array.slice();
+            console.log( 'starting array: ' + mutableArray);
+            let arrayNotSorted = true;
+            
+            while(arrayNotSorted){
+
+                let sortsOccurred = false;
+
+                for(i = 0; i < mutableArray.length; i++){
+                    // check if the two number are in ascending order
+                    console.log('index is :' + i);
+                    if(mutableArray[i] > mutableArray[i + 1]){
+                        // if they are out of order swap them
+                        let z = mutableArray[i];
+                        console.log(mutableArray[i] + ' to ' + mutableArray[i + 1]);
+                        mutableArray[i] = mutableArray[i + 1];
+                        mutableArray[i + 1] = z;
+                        sortsOccurred = true;
+                    }
+                }
+                // if a sort had to be perfomed the while loop will repeat the sorting loop
+                if(sortsOccurred = false){
+                    arrayNotSorted = false;
+                }
+
+            }
+            console.log( 'final array: ' + mutableArray);
+            return mutableArray;
+        }
+        bubbleSort(arrayToSort);
+        
+        
+        
+        ;
+    </script>
+
+
+    <div id="beforeSort"></div>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
