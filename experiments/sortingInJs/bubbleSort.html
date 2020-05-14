@@ -23,10 +23,11 @@
 
                 let sortsOccurred = false;
 
+                console.log('starting for loop');
                 for(i = 0; i < mutableArray.length; i++){
                     // check if the two number are in ascending order
                     console.log('index is :' + i);
-                    if(mutableArray[i] > mutableArray[i + 1]){
+                    if(mutableArray[i] > mutableArray[i + 1] && i != mutableArray.length ){
                         // if they are out of order swap them
                         let z = mutableArray[i];
                         console.log(mutableArray[i] + ' to ' + mutableArray[i + 1]);
@@ -36,8 +37,11 @@
                     }
                 }
                 // if a sort had to be perfomed the while loop will repeat the sorting loop
-                if(sortsOccurred = false){
+                console.log('sorts performed : ' + sortsOccurred);
+                if(sortsOccurred == false){
+                    console.log('before change' + arrayNotSorted);
                     arrayNotSorted = false;
+                    console.log('after change' + arrayNotSorted);
                 }
 
             }
@@ -47,9 +51,49 @@
         bubbleSort(arrayToSort);
         
         
-        
+        // file:///C:/xampp/htdocs/weekly-block/experiments/sortingInJs/bubbleSort.html
         ;
     </script>
+
+
+<!-- 
+    bubbleSort.html:26 starting for loop
+    bubbleSort.html:29 index is :0
+    bubbleSort.html:29 index is :1
+    bubbleSort.html:29 index is :2
+    bubbleSort.html:29 index is :3
+    bubbleSort.html:29 index is :4
+    bubbleSort.html:29 index is :5
+    bubbleSort.html:29 index is :6
+    bubbleSort.html:29 index is :7
+    bubbleSort.html:29 index is :8
+    bubbleSort.html:40 sorts performed : false
+    bubbleSort.html:26 starting for loop
+    bubbleSort.html:29 index is :0
+    bubbleSort.html:29 index is :1
+    bubbleSort.html:29 index is :2
+    bubbleSort.html:29 index is :3
+    bubbleSort.html:29 index is :4
+    bubbleSort.html:29 index is :5
+    bubbleSort.html:29 index is :6
+    bubbleSort.html:29 index is :7
+    bubbleSort.html:29 index is :8
+    bubbleSort.html:40 sorts performed : false
+    bubbleSort.html:26 starting for loop
+    bubbleSort.html:29 index is :0
+    bubbleSort.html:29 index is :1
+    bubbleSort.html:29 index is :2
+    bubbleSort.html:29 index is :3
+    bubbleSort.html:29 index is :4
+    bubbleSort.html:29 index is :5
+    bubbleSort.html:29 index is :6
+    bubbleSort.html:29 index is :7
+    bubbleSort.html:29 index is :8
+    bubbleSort.html:40 sorts performed : false
+    bubbleSort.html:26 starting for loop
+    bubbleSort.html:29 index is :0
+    bubbleSort.html:29 index is :1
+ -->
 
 
     <div id="beforeSort"></div>
