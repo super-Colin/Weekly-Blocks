@@ -24,6 +24,7 @@
 
     --centerExpandable-bgColor: #888;
     --centerExpandable-title-fontSize: 1.5em;
+    --centerExpandable-label-fontSize: 1em;
     --centerExpandable-topFlair-height: 1.4em;
 
     --centerExpandable-topOffset: calc(calc(var(--leftTriangle-topOffset) / 5) - var(--centerExpandable-title-fontSize));
@@ -180,8 +181,7 @@
     z-index: 11;
 
     width: 100%;
-    padding-bottom: calc(var(--leftTriangle-topOffset) * 0.3);
-    /* padding-bottom: var(--leftTriangle-topOffset); */
+    /* padding-bottom: calc(var(--leftTriangle-topOffset) * 0.2); */
 
     
     background-color: var(--centerExpandable-bgColor);
@@ -213,7 +213,7 @@
     padding: calc(var(--triangleFooter-side-padding) / 2) 0;
 
     text-align: center;
-    font-size: 1.5em;
+    font-size: var(--centerExpandable-title-fontSize);
     cursor: pointer;
 }
 
@@ -291,6 +291,11 @@
 
     padding: 0 var(--triangleFooter-side-padding);
 }
+.triangleFooter-centerExpandable-form-contactInfoWrapper label,
+.triangleFooter-centerExpandable-form-messageWrapper label,
+.triangleFooter-centerExpandable-form-submitContainer button {
+    font-size: var(--centerExpandable-label-fontSize);
+}
 .triangleFooter-centerExpandable-form-contactInfoWrapper  label,
 .triangleFooter-centerExpandable-form-messageWrapper  label {
     margin-bottom: calc(var(--triangleFooter-side-padding) * 0.15);
@@ -302,6 +307,62 @@
 }
 .triangleFooter-centerExpandable-form-contactInfoWrapper div:first-of-type{
     margin-bottom: var(--triangleFooter-side-padding);
+}
+
+.triangleFooter-centerExpandable-form-submitContainer{
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+
+    /* margin-top: var(--triangleFooter-side-padding); */
+    padding: var(--triangleFooter-side-padding) 0;
+}
+.triangleFooter-centerExpandable-form-submitMainBg{
+    position: relative;
+
+    background-color: var(--rightTriangle-bgColor);
+    filter: brightness(0.85);
+
+    overflow: hidden;
+}
+.triangleFooter-centerExpandable-form-submitSecondaryBg,
+.triangleFooter-centerExpandable-form-submitSecondaryBg2{
+    position: absolute;
+    left: 0;
+    top: 75%;
+    z-index: 11;
+
+    transform: rotate(var(--triangleAngle));
+    transform-origin: left top;
+    
+    width: 150%;
+    height: 100%;
+
+    background-color: var(--rightTriangle-bgColor);
+    filter: brightness(0.85);
+}
+.triangleFooter-centerExpandable-form-submitSecondaryBg2{
+    top: unset;
+    left:unset;
+    right: 0;
+    bottom: 75%;
+
+    transform: rotate(var(--triangleAngle));
+    transform-origin: right bottom;
+}
+
+.triangleFooter-centerExpandable-form-submitContainer button{
+    position: relative;
+    z-index: 12;
+
+    padding: calc(var(--triangleFooter-side-padding) * 0.33);
+
+    background-color: transparent;
+    border: none;
+
+    color: #fff;
+    /* text-decoration: underline; */
 }
 
 
@@ -334,7 +395,7 @@
     }
 
     .triangleFooter-centerExpandable-container {
-        padding-bottom: calc(var(--leftTriangle-topOffset) * 0.5);
+        /* padding-bottom: calc(var(--leftTriangle-topOffset) * 0.4); */
     }
     .triangleFooter-centerExpandable-title {
         padding: var(--triangleFooter-side-padding) 0;
@@ -363,7 +424,7 @@
         --triangleAngle: 10deg;
     }
     .triangleFooter-centerExpandable-container{
-        padding-bottom: calc(var(--leftTriangle-topOffset) * 0.6);
+        /* padding-bottom: calc(var(--leftTriangle-topOffset) * 0.5); */
     }
 }
 

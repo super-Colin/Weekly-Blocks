@@ -106,7 +106,7 @@ window.addEventListener('resize', leftAngleResizeEvent);
 
 function toggleCenterExpandable(){
     let centerExpandable = document.getElementById('triangleFooter-centerExpandable-container');
-    let topShouldBe = Math.floor((centerExpandable.offsetHeight * -1) * 0.85) + 'px';
+    let topShouldBe = Math.floor((centerExpandable.offsetHeight * -1) * 0.87) + 'px';
 
     if (centerExpandable.classList.contains('triangleFooter-centerExpandable-active')) {
 
